@@ -4,11 +4,17 @@ import com.amihaliov.crawlingservice.entity.Article;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
+import java.util.List;
 
 @Repository
 public interface ArticleRepository extends MongoRepository<Article, String> {
 
 //    @Query(fields = "{ 'id' : 1 }")
     Collection<Article> findDistinctAllByIdIn(Collection<String> ids);
+
+    List<Article> findByLastUpdateTimeAfterAndCreateTimeStampAfter(
+            LocalDateTime updateTime, LocalDateTime createTime
+    );
 }

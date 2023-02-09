@@ -18,7 +18,7 @@ public class Article {
 
     String imgUrl;
 
-    String lastUpdateTime;
+    LocalDateTime lastUpdateTime;
 
     LocalDateTime updateTimeStamp;
 
