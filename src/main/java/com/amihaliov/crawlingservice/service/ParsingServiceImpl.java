@@ -10,15 +10,22 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.time.temporal.ChronoField;
+import java.util.*;
 
 @Slf4j
 @Service
 public class ParsingServiceImpl implements IParsingService {
+    //    09 Февраля 09:53
+    public static final DateTimeFormatter FORMATTER = new DateTimeFormatterBuilder()
+            .appendPattern("dd MMMM HH:mm")
+            .parseDefaulting(ChronoField.YEAR, LocalDate.now().getYear())
+            .toFormatter(new Locale("ru"));
+
     @Override
     public List<Article> parse(Document document) {
 
@@ -36,8 +43,8 @@ public class ParsingServiceImpl implements IParsingService {
                         .description(ParserUtils.getText(element, "div.ls-detail_infoBlock p"))
                         .phone(ParserUtils.getText(element, "div.ls-detail_infoBlock > div > span:nth-child(2)"))
                         .price(new HashSet<>(Set.of(price)))
-                        .lastUpdateTime(ParserUtils.getText(element, "div.ls-detail_controlsBlock"))
-                        .createTimeStamp(LocalDateTime.now())
+                        .lastUpdateTime(LocalDateTime.parse(ParserUtils.getText(element, "div.ls-detail_controlsBlock").toLowerCase(), FORMATTER))
+                        .createTimeStamp(LocalDateTime.now().withSecond(0).withNano(0))
                         .title(ParserUtils.getText(element, "h3.ls-detail_antTitle"))
                         .build();
 
