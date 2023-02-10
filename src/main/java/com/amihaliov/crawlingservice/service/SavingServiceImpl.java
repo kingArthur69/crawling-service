@@ -1,14 +1,17 @@
 package com.amihaliov.crawlingservice.service;
 
 import com.amihaliov.crawlingservice.entity.Article;
+import com.amihaliov.crawlingservice.entity.Price;
 import com.amihaliov.crawlingservice.repository.ArticleRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -37,14 +40,14 @@ public class SavingServiceImpl implements ISavingService {
 
             Map<String, Article> articleMap = articles.stream()
                     .filter(article -> existingIds.contains(article.getId()))
-                    .collect(Collectors.toMap(Article::getId, a -> a));
+                    .collect(Collectors.toMap(Article::getId, Function.identity()));
 
             Set<Article> updateArticles = new HashSet<>();
             for (Article existingArticle : existingArticles) {
-                LocalDateTime updateTimeStamp = LocalDateTime.now();
+                LocalDateTime updateTimeStamp = LocalDateTime.now().withNano(0);
                 if (shouldUpdate(existingArticle, updateTimeStamp)) {
                     Article newArticle = articleMap.get(existingArticle.getId());
-                    existingArticle.getPrice().add(newArticle.getPrice().stream().findFirst().orElseThrow());
+                    updatePrices(existingArticle, newArticle);
                     existingArticle.setDescription(newArticle.getDescription());
                     existingArticle.setLastUpdateTime(newArticle.getLastUpdateTime());
                     existingArticle.setUpdateTimeStamp(updateTimeStamp);
@@ -66,5 +69,17 @@ public class SavingServiceImpl implements ISavingService {
         LocalDateTime existingUpdate = existingArticle.getUpdateTimeStamp();
         return existingUpdate == null && ChronoUnit.HOURS.between(existingArticle.getCreateTimeStamp(), updateTimeStamp) > UPDATE_HOURS_AMOUNT
                 || existingUpdate != null && ChronoUnit.HOURS.between(existingUpdate, updateTimeStamp) > UPDATE_HOURS_AMOUNT;
+    }
+
+
+    private void updatePrices(Article existingArticle, Article newArticle) {
+        Price newPrice = newArticle.getCurrentPrice();
+        String newPriceValue = newPrice.getValue();
+
+        if(!StringUtils.equals(existingArticle.getCurrentPrice().getValue(), newPriceValue)) {
+            Map<String, Price> priceHistory = existingArticle.getPriceHistory();
+            priceHistory.putIfAbsent(newPriceValue, newPrice);
+            existingArticle.setCurrentPrice(newPrice);
+        }
     }
 }

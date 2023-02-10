@@ -14,7 +14,7 @@ public interface ArticleRepository extends MongoRepository<Article, String> {
 //    @Query(fields = "{ 'id' : 1 }")
     Collection<Article> findDistinctAllByIdIn(Collection<String> ids);
 
-    List<Article> findByLastUpdateTimeAfterAndCreateTimeStampAfter(
+    List<Article> findByUpdateTimeStampNullAndLastUpdateTimeAfterAndCreateTimeStampAfter(
             LocalDateTime updateTime, LocalDateTime createTime
     );
 }

@@ -7,12 +7,12 @@ import java.time.LocalDateTime;
 @Data
 public class Price {
 
-    public Price(String price) {
-        this.price = price;
+    public Price(String value) {
+        this.value = value;
     }
 
-    LocalDateTime creationTime = LocalDateTime.now();
+    LocalDateTime creationTime = LocalDateTime.now().withNano(0);
 
-    private String price;
+    String value;
 
 }

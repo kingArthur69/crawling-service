@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+
+  java:
+    build:
+      context: ../
+    ports:
+      - "8080:8080"
+    environment:
+      JAVA_OPTS: '-Dspring.data.mongodb.host=database -Duser.timezone=EET'
+#      JAVA_OPTS: '-Dspring.data.mongodb.uri=mongodb://root:password@database:27017/test'
+
+
+  database:
+    image: mongo
+#    environment:
+#      - MONGO_INITDB_DATABASE=crawl
+#      - MONGO_INITDB_ROOT_USERNAME=admin
+#      - MONGO_INITDB_ROOT_PASSWORD=crawl
+    volumes:
+      - ./mongo-volume:/data/db
+    ports:
+      - '27017:27017'
