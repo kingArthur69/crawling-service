@@ -4,7 +4,6 @@ import com.amihaliov.crawlingservice.entity.Article;
 import com.amihaliov.crawlingservice.service.IArticleService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.core.io.Resource;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;

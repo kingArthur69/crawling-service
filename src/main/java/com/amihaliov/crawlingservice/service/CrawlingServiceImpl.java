@@ -4,6 +4,7 @@ import com.amihaliov.crawlingservice.entity.Article;
 import com.amihaliov.crawlingservice.utils.ParserUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -18,7 +19,8 @@ import java.util.concurrent.TimeUnit;
 public class CrawlingServiceImpl implements ICrawlingService {
 
     public static final String BASE_URL = "https://makler.md/ru/transnistria/transport/cars";
-    public static final long PAGE_CRAWL_DELAY_SECONDS = 10L;
+    public static final long PAGE_CRAWL_DELAY_MIN = 7L;
+    public static final long PAGE_CRAWL_DELAY_MAX = 15L;
     public static final String NEXT_PAGE_SELECTOR = "li a.paginator_pageLink.paginator_nextPage";
 
     private final ISavingService savingService;
@@ -54,7 +56,7 @@ public class CrawlingServiceImpl implements ICrawlingService {
                 } else break;
 
                 log.info("Crawled url " + url + ". Got " + articles.size() + " articles");
-                TimeUnit.SECONDS.sleep(PAGE_CRAWL_DELAY_SECONDS);
+                TimeUnit.SECONDS.sleep(RandomUtils.nextLong(PAGE_CRAWL_DELAY_MIN, PAGE_CRAWL_DELAY_MAX));
                 count++;
             }
 

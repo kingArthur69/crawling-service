@@ -4,9 +4,7 @@ import com.amihaliov.crawlingservice.entity.Article;
 import com.amihaliov.crawlingservice.repository.ArticleRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +29,8 @@ public class ArticleServiceImpl implements IArticleService {
     @Override
     public List<Article> getNewArticles() {
         LocalDateTime newArticleTime = LocalDateTime.now().minusHours(NEW_ARTICLE_TIME_THRESHOLD);
-        return articleRepository.findByLastUpdateTimeAfterAndCreateTimeStampAfter(newArticleTime, newArticleTime);
+        return articleRepository.findByUpdateTimeStampNullAndLastUpdateTimeAfterAndCreateTimeStampAfter(
+                newArticleTime, newArticleTime
+        );
     }
 }

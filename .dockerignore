@@ -1,0 +1,10 @@
+HELP.md
+README.md
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+/docker-crawling/mongo-volume/
+
+### IntelliJ IDEA ###
+.idea
+*.iml
