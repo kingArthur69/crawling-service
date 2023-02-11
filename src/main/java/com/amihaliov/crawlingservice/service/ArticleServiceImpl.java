@@ -21,9 +21,8 @@ public class ArticleServiceImpl implements IArticleService {
     private final ArticleRepository articleRepository;
 
     @Override
-    public List<Article> getArticlesPage(Pageable pageable) {
-        Page<Article> result = articleRepository.findAll(pageable);
-        return result.getContent();
+    public Page<Article> getArticlesPage(Pageable pageable) {
+        return articleRepository.findAll(pageable);
     }
 
     @Override
