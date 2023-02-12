@@ -1,8 +1,10 @@
 package com.amihaliov.crawlingservice.service;
 
 import com.amihaliov.crawlingservice.entity.Article;
+import com.amihaliov.crawlingservice.entity.Crawl;
 import com.amihaliov.crawlingservice.entity.Price;
 import com.amihaliov.crawlingservice.repository.ArticleRepository;
+import com.amihaliov.crawlingservice.repository.CrawlRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -21,6 +23,8 @@ public class SavingServiceImpl implements ISavingService {
 
     private static final long UPDATE_HOURS_AMOUNT = 10L;
     private final ArticleRepository articleRepository;
+
+    private final CrawlRepository crawlRepository;
 
     @Override
     public void save(List<Article> articles) {
@@ -58,7 +62,7 @@ public class SavingServiceImpl implements ISavingService {
             log.info("Saving " + updateArticles.size() + " Existing Articles");
             articleRepository.saveAll(updateArticles);
 
-        //TODO mesure save time taken to save old and new
+            //TODO mesure save time taken to save old and new
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             throw new RuntimeException(e);
@@ -76,10 +80,15 @@ public class SavingServiceImpl implements ISavingService {
         Price newPrice = newArticle.getCurrentPrice();
         String newPriceValue = newPrice.getValue();
 
-        if(!StringUtils.equals(existingArticle.getCurrentPrice().getValue(), newPriceValue)) {
+        if (!StringUtils.equals(existingArticle.getCurrentPrice().getValue(), newPriceValue)) {
             Map<String, Price> priceHistory = existingArticle.getPriceHistory();
             priceHistory.putIfAbsent(newPriceValue, newPrice);
             existingArticle.setCurrentPrice(newPrice);
         }
+    }
+
+    @Override
+    public void save(Crawl crawl) {
+        crawlRepository.save(crawl);
     }
 }

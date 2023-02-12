@@ -17,7 +17,7 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping("/article")
+@RequestMapping("/api/v1/article")
 @RequiredArgsConstructor
 public class ArticleController {
 
@@ -33,7 +33,7 @@ public class ArticleController {
         try {
             Sort sortBy = Sort.by(Sort.Direction.fromString(direction), property);
             Pageable pageable = PageRequest.of(page, count, sortBy);
-            List<Article> articles = articleService.getArticlesPage(pageable);
+            List<Article> articles = articleService.getArticlesPage(pageable).getContent();
             return ResponseEntity.ok(articles);
         } catch (Exception e) {
             log.error("Error while getting Articles", e);

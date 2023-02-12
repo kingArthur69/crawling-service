@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Articles</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-2" align="center">
+    <h3>Crawling Service - Articles</h3>
+    <a th:href="@{/}" class="btn btn-success btn-danger text-white  mb-3">Back</a>
+    <a th:href="@{/articles/new}" class="btn btn-info text-white  mb-3">New Articles</a>
+    <table style="width:100%" border="1" class="table table-striped table-responsive-md">
+        <thead>
+        <tr>
+            <th>Image</th>
+            <th>Description</th>
+            <th>Info</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="article:${articles}">
+            <td>
+                <img th:src="${#strings.replace(article.imgUrl, '/thumb/', '/original/')}" class="img-fluid img-fluid">
+            </td>
+            <td th:text="${article.description}">Description</td>
+            <td>
+                <div th:text="${article.title}">Title</div>
+                <div class="text-success" th:text="${article.currentPrice.value}">Value</div>
+                <div th:text="${article.phone}">Phone</div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link" th:if="${currentPage > 0}" th:href="@{/articles?page=0}">First</a>
+                <span class="page-link disabled text-black-50" th:unless="${currentPage > 0}">First</span>
+            </li>
+            <li class="page-item">
+                <a class="page-link" th:if="${currentPage > 0}" th:href="@{'/articles?page=' + ${currentPage - 1}}">Previous</a>
+                <span class="page-link disabled text-black-50" th:unless="${currentPage > 0}">Previous</span>
+            </li>
+            <li class="page-item"
+                th:each="i: ${#numbers.sequence(T(java.lang.Math).max(1, currentPage - 4), T(java.lang.Math).min(currentPage + 4, pages))}">
+                <a class="page-link" th:if="${i - 1 != currentPage}"
+                   th:href="@{'/articles?page=' + ${i - 1}}">[[${i}]]</a>
+                <span class="page-link text-white bg-primary disabled"
+                      th:unless="${i - 1 != currentPage}">[[${i}]]</span>
+            </li>
+            <li class="page-item">
+                <a class="page-link" th:if="${currentPage < pages - 1}"
+                   th:href="@{'/articles?page=' + ${currentPage + 1}}">Next</a>
+                <span class="page-link disabled text-black-50" th:unless="${currentPage < pages - 1}">Next</span>
+            </li>
+            <li class="page-item">
+                <a class="page-link" th:if="${currentPage < pages - 1}" th:href="@{'/articles?page=' + ${pages - 1}}">Last</a>
+                <span class="page-link disabled text-black-50" th:unless="${currentPage < pages - 1}">Last</span>
+            </li>
+        </ul>
+    </nav>
+</div>
+</body>
+</html>

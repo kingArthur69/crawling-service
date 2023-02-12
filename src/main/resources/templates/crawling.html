@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Crawling</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-2" align="center">
+    <h3>Crawling Service - Crawling</h3>
+    <a th:href="@{/}" class="btn btn-success btn-danger text-white  mb-3" >Back</a>
+    <a th:href="@{/crawling/update}" class="btn btn-info text-white  mb-3" >Update Crawl</a>
+    <a th:href="@{/crawling/full}" class="btn btn-warning mb-3" >Full Crawl</a>
+    <a th:href="@{/crawling/list}" class="btn btn-success text-white mb-3" >List Crawls</a>
+    <table style="width:80%" border="1"
+           class = "table table-striped table-responsive-md">
+        <thead>
+        <tr>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Page Count</th>
+            <th>Article Count</th>
+            <th>Status</th>
+<!--            <th>Url</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="crawl:${crawls}">
+            <td th:text="${crawl.startTimeStamp}"></td>
+            <td th:text="${crawl.endTimeStamp}"></td>
+            <td th:text="${crawl.pagesCrawled}"></td>
+            <td th:text="${crawl.articlesCrawled}"></td>
+            <td th:text="${crawl.status}"></td>
+<!--            <td th:text="${crawl.url}"></td>-->
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
