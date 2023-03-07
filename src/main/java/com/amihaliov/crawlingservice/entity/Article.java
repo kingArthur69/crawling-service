@@ -3,6 +3,7 @@ package com.amihaliov.crawlingservice.entity;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
@@ -26,8 +27,10 @@ public class Article {
 
     String url;
 
+    @TextIndexed(weight = 3)
     String title;
 
+    @TextIndexed
     String description;
 
     Price currentPrice;

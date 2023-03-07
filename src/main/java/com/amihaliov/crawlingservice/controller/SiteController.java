@@ -8,6 +8,7 @@ import com.amihaliov.crawlingservice.service.ICrawlingService;
 import com.amihaliov.crawlingservice.service.IReadingService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -67,16 +68,24 @@ public class SiteController {
             @RequestParam(name = "count", defaultValue = "50") Integer count,
             @RequestParam(name = "order", defaultValue = "lastUpdateTime") String property,
             @RequestParam(name = "direction", defaultValue = "desc") String direction,
+            @RequestParam(name = "text", defaultValue = "") String text,
             Model model
     ) {
         try {
             Sort sortBy = Sort.by(Sort.Direction.fromString(direction), property);
             Pageable pageable = PageRequest.of(page, count, sortBy);
-            Page<Article> articlesPage = articleService.getArticlesPage(pageable);
+            String trimmedText = StringUtils.trim(text);
+            int length = StringUtils.length(trimmedText);
+
+            Page<Article> articlesPage = length > 2 && length < 25
+                    ? articleService.getArticlesPageByText(trimmedText, pageable)
+                    : articleService.getArticlesPage(pageable);
+
             model.addAttribute("articles", articlesPage.getContent());
             model.addAttribute("currentPage", page);
             model.addAttribute("pages", articlesPage.getTotalPages());
             model.addAttribute("elements", articlesPage.getTotalElements());
+            model.addAttribute("text", text);
             return "articles";
         } catch (Exception e) {
             log.error("Error while getting Articles", e);

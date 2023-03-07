@@ -36,7 +36,7 @@ public class CrawlingServiceImpl implements ICrawlingService {
 
     @Override
     public void updateCrawl() {
-        executorService.submit(() -> crawl(3));
+        executorService.submit(() -> crawl(5));
     }
 
     @Override
