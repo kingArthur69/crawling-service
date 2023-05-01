@@ -37,9 +37,9 @@ public class ArticleServiceImpl implements IArticleService {
 
     @Override
     public Page<Article> getArticlesPageByText(String text, Pageable pageable) {
-        TextCriteria criteria = StringUtils.contains(text, " ")
+        TextCriteria criteria = !StringUtils.contains(text, "\"") && StringUtils.contains(text, " ")
                 ? TextCriteria.forDefaultLanguage().caseSensitive(false).matchingAny(StringUtils.split(text, " "))
-                : TextCriteria.forDefaultLanguage().caseSensitive(false).matching(text);
+                : TextCriteria.forDefaultLanguage().caseSensitive(false).matching(StringUtils.remove(text, "\""));
         return articleRepository.findAllBy(criteria, pageable);
     }
 }
