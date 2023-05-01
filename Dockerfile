@@ -10,7 +10,8 @@ COPY src src
 #RUN --mount=type=cache,target=/root/.m2 ./mvnw install -DskipTests
 #RUN dos2unix mvnw && chmod +x mvnw
 
-RUN sed -i 's/\r$//' mvnw && /bin/sh mvnw install -DskipTests
+RUN ./mvnw install -DskipTests
+# RUN sed -i 's/\r$//' mvnw && /bin/sh mvnw install -DskipTests
 
 RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
