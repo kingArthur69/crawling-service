@@ -1,7 +1,6 @@
 package com.amihaliov.crawlingservice.service;
 
 import com.amihaliov.crawlingservice.repository.ArticleRepository;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -34,7 +33,7 @@ class ArticleServiceImplTest {
 
     private static Stream<Arguments> textSupplier() {
         return Stream.of(
-                Arguments.of("\"quoted test\"", "quoted test"),
+                Arguments.of("\"quoted test\"", "\"quoted test\""),
                 Arguments.of("test", "test")
         );
     }
@@ -52,19 +51,5 @@ class ArticleServiceImplTest {
                 .matching(expected);
 
         assertEquals(expectedCriteria, criteria.getValue());
-    }
-
-    @Test
-    void getArticlesPageByText_MultipleWordsWithoutQuotes_Test() {
-        articleServiceImpl.getArticlesPageByText("test1 test2", PageRequest.of(1, 1));
-
-        verify(articleRepository).findAllBy(criteria.capture(), any());
-
-        TextCriteria expected = TextCriteria
-                .forDefaultLanguage()
-                .caseSensitive(false)
-                .matchingAny("test1", "test2");
-
-        assertEquals(expected, criteria.getValue());
     }
 }

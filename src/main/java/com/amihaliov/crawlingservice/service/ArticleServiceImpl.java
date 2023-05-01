@@ -4,7 +4,6 @@ import com.amihaliov.crawlingservice.entity.Article;
 import com.amihaliov.crawlingservice.repository.ArticleRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.query.TextCriteria;
@@ -37,9 +36,7 @@ public class ArticleServiceImpl implements IArticleService {
 
     @Override
     public Page<Article> getArticlesPageByText(String text, Pageable pageable) {
-        TextCriteria criteria = !StringUtils.contains(text, "\"") && StringUtils.contains(text, " ")
-                ? TextCriteria.forDefaultLanguage().caseSensitive(false).matchingAny(StringUtils.split(text, " "))
-                : TextCriteria.forDefaultLanguage().caseSensitive(false).matching(StringUtils.remove(text, "\""));
+        TextCriteria criteria = TextCriteria.forDefaultLanguage().caseSensitive(false).matching(text);
         return articleRepository.findAllBy(criteria, pageable);
     }
 }
