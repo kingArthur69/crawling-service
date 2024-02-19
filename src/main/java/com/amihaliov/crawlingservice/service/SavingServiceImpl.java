@@ -2,8 +2,10 @@ package com.amihaliov.crawlingservice.service;
 
 import com.amihaliov.crawlingservice.entity.Article;
 import com.amihaliov.crawlingservice.entity.Crawl;
+import com.amihaliov.crawlingservice.entity.ParsingResult;
 import com.amihaliov.crawlingservice.entity.Price;
 import com.amihaliov.crawlingservice.repository.ArticleRepository;
+import com.amihaliov.crawlingservice.repository.CategoryRepository;
 import com.amihaliov.crawlingservice.repository.CrawlRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,9 +24,10 @@ import java.util.stream.Collectors;
 public class SavingServiceImpl implements ISavingService {
 
     private static final long UPDATE_HOURS_AMOUNT = 10L;
-    private final ArticleRepository articleRepository;
 
+    private final ArticleRepository articleRepository;
     private final CrawlRepository crawlRepository;
+    private final CategoryRepository categoryRepository;
 
     @Override
     public void save(List<Article> articles) {
@@ -90,5 +93,16 @@ public class SavingServiceImpl implements ISavingService {
     @Override
     public void save(Crawl crawl) {
         crawlRepository.save(crawl);
+    }
+
+    @Override
+    public void save(ParsingResult result) {
+        if (result.getArticles() != null) {
+            this.save(result.getArticles());
+        }
+
+        if (result.getCategories() != null) {
+            categoryRepository.saveAll(result.getCategories());
+        }
     }
 }

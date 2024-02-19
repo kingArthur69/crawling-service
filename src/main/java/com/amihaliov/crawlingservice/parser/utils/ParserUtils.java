@@ -1,4 +1,4 @@
-package com.amihaliov.crawlingservice.utils;
+package com.amihaliov.crawlingservice.parser.utils;
 
 import org.jsoup.nodes.Element;
 

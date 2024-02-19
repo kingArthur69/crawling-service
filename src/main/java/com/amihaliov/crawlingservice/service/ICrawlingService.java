@@ -1,7 +1,9 @@
 package com.amihaliov.crawlingservice.service;
 
-public interface ICrawlingService {
-    void updateCrawl();
+import org.jsoup.nodes.Document;
 
-    void fullCrawl();
+public interface ICrawlingService {
+
+    Document crawl(String url);
+
 }

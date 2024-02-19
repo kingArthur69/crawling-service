@@ -2,10 +2,9 @@ package com.amihaliov.crawlingservice.controller;
 
 
 import com.amihaliov.crawlingservice.entity.Article;
+import com.amihaliov.crawlingservice.entity.Category;
 import com.amihaliov.crawlingservice.entity.Crawl;
-import com.amihaliov.crawlingservice.service.IArticleService;
-import com.amihaliov.crawlingservice.service.ICrawlingService;
-import com.amihaliov.crawlingservice.service.IReadingService;
+import com.amihaliov.crawlingservice.service.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -27,9 +26,13 @@ public class SiteController {
 
     private final IArticleService articleService;
 
-    private final ICrawlingService crawlingService;
+    private final ICrawlExecutorService crawlExecutorService;
 
     private final IReadingService readingService;
+
+    private final ICrawlingManagerService crawlingManagerService;
+
+    private final ICategoryService categoryService;
 
     @GetMapping("/")
     String viewHomePage() {
@@ -43,15 +46,28 @@ public class SiteController {
         return "crawling";
     }
 
+    @GetMapping("/crawling/categories")
+    String viewCrawlingCategoriesPage(Model model) {
+        List<Category> categoriesToCrawl = crawlingManagerService.getCategoriesToCrawl();
+        List<Category> mainCategories = categoryService.findMainCategories();
+        model.addAttribute("categoriesToCrawl", categoriesToCrawl);
+        model.addAttribute("mainCategories", categoriesToCrawl);
+        return "categories";
+    }
+
     @GetMapping("/crawling/update")
     String triggerUpdateCrawl() {
-        crawlingService.updateCrawl();
+        for (Category category : crawlingManagerService.getCategoriesToCrawl()) {
+            crawlExecutorService.submitForUpdate(category.getUrl());
+        }
         return "redirect:/crawling";
     }
 
     @GetMapping("/crawling/full")
     String triggerFullCrawl() {
-        crawlingService.fullCrawl();
+        for (Category category : crawlingManagerService.getCategoriesToCrawl()) {
+            crawlExecutorService.submitForFull(category.getUrl());
+        }
         return "redirect:/crawling";
     }
 

@@ -1,0 +1,1522 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <link rel="canonical" href="//makler.md/categories"> <!-- favicons begin -->
+    <link rel="icon" href="/favicon.ico?27">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png?25">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png?25">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png?25">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png?25">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png?25">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png?25">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png?25">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png?25">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png?25">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png?25" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png?25" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png?25" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png?27" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png?25">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-title" content="Makler.md">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Makler.md"> <!-- favicons end -->
+    <meta name="format-detection" content="telephone=no">
+    <script data-ad-client="ca-pub-4718658742144689" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.Default.css">
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster.js"></script>
+    <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
+    <link href="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css" rel="stylesheet">
+    <script src="/vendors/jquery/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js" integrity="sha256-tSRROoGfGWTveRpDHFiWVz+UXt+xKNe90wwGn25lpw8=" crossorigin="anonymous"></script>
+    <title>Makler - Разделы и рубрики</title>
+    <link href="/d/css.min/layout.default.css?2667d" media="screen" rel="stylesheet" type="text/css">
+    <link href="/d/css/login-register-popups.css?2667d" media="screen" rel="stylesheet" type="text/css">
+    <link href="/vendors/jquery/ui/jquery-ui.min.css?2667d" media="screen" rel="stylesheet" type="text/css">
+    <link href="/vendors/jquery/plugins/jquery.plugins.min.css?2667d" media="screen" rel="stylesheet" type="text/css">
+    <link href="/vendors/fancybox2/jquery.fancybox.min.css?2667de" media="screen" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+        var CONF = {
+            lang: 'ru',
+            publisherId: '1',
+            publisherUrl: 'chisinau',
+            regionUri: 'transnistria',
+            clientType: '',
+            showToolTipDelay: 1000,
+            showHelpDelay: 300,
+            desktopType: 'desktop',
+            domain: 'makler.md',
+            ws: "wss://makler.md/ws/",
+            isUa: 'false',
+            announcementIndexLimit: 24,
+            isModerated: 0,
+            UID: 0,
+            ws_uid: '',
+            obtainUId: 895093,
+            showCardDelay: 500,
+            showPhotoDelay: 100,
+            showBadge: true,
+            googleTagManagerData: {
+                city: "Кишинёв",
+                field_115: [],
+                publishers: {
+                    1 : 'Kishinev',
+                    2 : 'Belcy',
+                    3 : 'Tiraspol',
+                    4 : 'Odessa',
+                    12 : 'Rybnica',
+                    14 : 'Nikolaev',
+                    15 : 'Regiony_Moldovy'
+                }
+            },
+            ga: '',
+            fbAppId: '191496614200089',
+            vkAppId: '2117415',
+            rp_host: 'https://comet.makler.md/?1684594673',
+            us_uid: '',
+            answer_btn: 'Ответить',
+            disable_notifications: true        };
+    </script>
+    <meta name="apple-itunes-app" content="app-id=1370408572"> <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NQG53J3');</script> <!-- End Google Tag Manager -->
+    <meta name="google-site-verification" content="e6C7Eqr-sncnZc2rUYLWxK4LKTD7StO771NEHusN7Sw">
+    <script>window.yaContextCb = window.yaContextCb || []</script>
+    <script src="https://yandex.ru/ads/system/context.js" async></script>
+</head>
+<body><!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQG53J3" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript> <!-- End Google Tag Manager (noscript) -->
+<script>
+    function ga(action, data) {}
+</script> <!-- site content { -->
+<div id="mainWrapper">
+    <script type="text/javascript" src="/vendors/jquery/jquery-tmpl.js" async></script>
+    <header id="header"><!--	banner begin-->
+        <aside id="header_wideBannContainer">
+            <div id="header_wideBannCropper">
+            </div>
+        </aside> <!--	banner end-->
+        <div class="canvas">
+            <nav id="header_firstRow">
+                <div id="header_colLeft"><a href="/ru/" id="header_logo"></a> <a href="/md/categories" id="header_lang" class="bdash"><span>în română</span></a>
+                </div>
+                <div id="header_colRight">
+                    <ul id="header_menu">
+                        <li class="header_menuItem"><a href="/ru/an/notepad/" class="header_menuLink" id="header_myNotepad"> <span class="mr5">Блокнот</span> <b id="notepadQty"> </b> </a></li>
+                        <li class="header_menuItem"><a href="javascript:void(null);" id="logInDiv" onclick="App.user.login();" class="DropDownBtn bdash user header_menuLink">
+                            <div><span>Войти</span>
+                            </div> </a></li>
+                        <li class="header_menuItem"><a onclick="App.user.register();" href="javascript:void(null);" id="reg-link-header" class="header_menuLink"> Регистрация </a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div id="header_secondRow">
+                <div id="header_publisherSelector"><span data-w="pubSelList" class="DropDownBtn bdrop"> Приднестровье</span>
+                    <div class="mydrop  shadow" id="pubSelList" style="display: none;">
+                        <div id="main-list-bookmarked" class="m_container">
+                            <div class="ohid">
+                                <h4>Популярные регионы</h4>
+                            </div>
+                            <div class="book book_2_columns">
+                                <ul>
+                                    <li class="uppercase"><a class="select_region" href="javascript:void(null);" data-rel="2" data-type="region">Молдова</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="28" data-type="city">Кишинёв</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="9" data-type="city">Бельцы</a></li>
+                                    <li class="uppercase"><a class="select_region" href="javascript:void(null);" data-rel="3" data-type="region">Приднестровье</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1112" data-type="city">Тирасполь</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="2" data-type="city">Рыбница</a></li>
+                                </ul>
+                            </div>
+                            <div class="links"><a href="https://makler.ua/" class="uk_link uppercase">Украина</a>
+                                <div class="region"><a class="select_region uppercase" href="/ru" data-rel="mssr" data-type="region">Молдова и Приднестровье</a> <br> <a href="javascript: void(null);" id="another-regions" class="other otherReg">ДРУГОЙ ГОРОД</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m_container" id="cities-list" style="display:none;">
+                            <div class="ohid">
+                                <h4>Выберите город</h4> <a id="return-1" href="javascript: void(null);">назад к популярным регионам</a>
+                            </div>
+                            <div class="book">
+                                <ul>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="28" data-type="city">Кишинёв</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="9" data-type="city">Бельцы</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1112" data-type="city">Тирасполь</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1113" data-type="city">Бендеры</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="2" data-type="city">Рыбница</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1494" data-type="city">Бессарабка</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="11" data-type="city">Бируинца</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1248" data-type="city">Ближний Хутор</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1495" data-type="city">Бричаны</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1034" data-type="city">Бубуечь</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1035" data-type="city">Будешть</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="13" data-type="city">Быковец</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1033" data-type="city">Бэчой</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1048" data-type="city">Вадул-луй-Водэ</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1049" data-type="city">Ватра</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1539" data-type="city">Вулканешты</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1042" data-type="city">Гидигичь</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="17" data-type="city">Гиндешты</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1506" data-type="city">Глодяны</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="4" data-type="city">Григориополь</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1043" data-type="city">Грэтиешть</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="3129" data-type="city">Днестровск</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1501" data-type="city">Дондюшаны</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1502" data-type="city">Дрокия</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="2597" data-type="city">Дубоссары</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1040" data-type="city">Думбрава</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1104" data-type="city">Единец</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="3466" data-type="city">Дэнчень</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1105" data-type="city">Кагул</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="23" data-type="city">Каинары</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1497" data-type="city">Калараш</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="5" data-type="city">Каменка</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1496" data-type="city">Кантемир</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1498" data-type="city">Каушаны</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1037" data-type="city">Кодру</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1038" data-type="city">Колоница</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1106" data-type="city">Комрат</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="31" data-type="city">Конгаз</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="32" data-type="city">Корнешты</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="33" data-type="city">Костешты</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1503" data-type="city">Кочиеры</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="34" data-type="city">Красное</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1039" data-type="city">Криково</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1500" data-type="city">Криулень</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1538" data-type="city">Крузешть</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="37" data-type="city">Купчинь</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1508" data-type="city">Леова</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="39" data-type="city">Липканы</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="40" data-type="city">Маркулешты</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="41" data-type="city">Маяк</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1509" data-type="city">Ниспорены</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="43" data-type="city">Новотираспольский</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1493" data-type="city">Новые Анены</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1510" data-type="city">Окница</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1107" data-type="city">Орхей</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="47" data-type="city">Отачь</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1250" data-type="city">Парканы</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1511" data-type="city">Резина</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="3465" data-type="city">Первомайск</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1512" data-type="city">Рышканы</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1519" data-type="city">Слободзея</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1108" data-type="city">Сороки</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1514" data-type="city">Страшены</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1044" data-type="city">Стэучень</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1249" data-type="city">Суклея</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1513" data-type="city">Сынджера</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1045" data-type="city">Сынжерей</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1517" data-type="city">Тараклия</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="55" data-type="city">Твардица</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1518" data-type="city">Теленешты</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1251" data-type="city">Терновка</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1046" data-type="city">Тохатин</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1047" data-type="city">Трушень</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1109" data-type="city">Унгень</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1504" data-type="city">Фалешты</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1505" data-type="city">Флорешты</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="60" data-type="city">Фрунзе</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1110" data-type="city">Хынчешты</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="2609" data-type="city">Чадыр-Лунга</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1499" data-type="city">Чимишлия</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1036" data-type="city">Чореску</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1515" data-type="city">Шолданешты</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1516" data-type="city">Штефан-Водэ</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="1507" data-type="city">Яловены</a></li>
+                                    <li><a class="select_region" href="javascript:void(null);" data-rel="67" data-type="city">Яргара</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="header_searchBox">
+                    <div itemscope itemtype="https://schema.org/WebSite">
+                        <meta itemprop="url" content="//makler.md/">
+                        <form id="header_searchForm" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" action="/ru/transnistria/an/search/" method="get">
+                            <meta itemprop="target" content="https://makler.md/ru/an/search/?query={query}"> <input id="header_searchField" type="text" itemprop="query-input" class="disable-border" placeholder="Найти среди 66 805 объявлений в Приднестровье..." name="query" value="" autocomplete="off"> <button type="submit" id="header_searchButton">Найти</button>
+                        </form>
+                    </div>
+                </div> <a class="btn_solid btn_green btn_45" onclick="GA_MKLR.anAddToCatFromTopMenu('Кишинёв', '')" href="/an/web/add"> Создай объявление </a>
+            </div>
+        </div>
+    </header>
+    <nav id="toolbar">
+        <div id="toolbar_wrapper">
+            <div id="toolbar_leftControls"><a id="toolbar_slideToTop" class="toolbar_qtip" title="Наверх" href="javascript:void(null);"></a> <a id="toolbar_logo" class="toolbar_qtip" title="На главную страницу" href="/"></a>
+            </div>
+            <form action="/ru/an/search/" method="GET" id="toolbar_searchForm"><input id="toolbar_searchField" type="text" name="query" value="" placeholder="Найти в Приднестровье..." autocomplete="off"> <button id="toolbar_searchButton">Найти</button> <span id="toolbar_minifySearchBox"></span>
+                <div id="toolbar_smartSearchBox"></div>
+            </form>
+            <div id="toolbar_rightControls"><a href="/ru/an/notepad/" id="toolbar_myNotepad" title="Блокнот" class="toolbar_qtip"> <span class="notepadQty"> </span> </a>
+                <div id="toolbar_myMiniProfile" class="DropDownBtn" onclick="App.user.login();"><a href="javascript:void(null)" onclick="App.user.login();" data-w="toolbar_logInExpanded" id="mmLogB" class="DropDownBtn bdash ron"> <span class="ron">Войти</span> </a>
+                </div> <a href="javascript:void(null);" id="toolbar_registerLink" onclick="return App.user.register();"> Регистрация </a> <a class="toolbar_qtip" onclick="GA_MKLR.anAddToCatFromTopMenu('Кишинёв', '')" href="/an/user/add" id="toolbar_addAd" title="Создай объявление"> </a>
+            </div>
+        </div>
+    </nav>
+    <ul id="smartSearchBox" data-publisher-id="1" data-is-cat="" style="display: none"></ul>
+    <script id="smartSearchBox_tmpl" type="text/x-jquery-tmpl">
+		{{if isInCategory}}
+	<li id="smartSearchBox_findInThisCat" class="smartSearch_promptItem" data-category-url="">
+		{{html categoryQuery}}
+	<span class="smartSearch_catName">в текущем разделе</span>
+		</li>
+		{{/if}}
+	{{if categoryQueries.length}}
+	<li id="smartSearchBox_findInCategories">
+		<ul>
+		{{each(k, v) categoryQueries}}
+	<li class="smartSearch_promptItem" data-category-url="${v.url}">
+		{{html v.key}}
+	<span class="smartSearch_catName">${v.category}</span>
+		</li>
+		{{/each}}
+	</ul>
+	</li>
+	{{/if}}
+	{{if otherQueries.length}}
+	<li id="smartSearchBox_findInOtherQueries">
+		<ul>
+		{{each otherQueries}}
+	<li class="smartSearch_promptItem">
+		{{html $value}}
+	</li>
+	{{/each}}
+	</ul>
+	</li>
+	{{/if}}
+</script>
+    <div id="contentWrapper" class="canvas clrfix">
+        <div class="title clrfix">
+            <h1>Разделы и рубрики</h1>
+        </div>
+        <div class="map">
+            <h2 class="tub"><a href="/ru/transnistria/assistance-refugees" class="new_year_red">Помощь беженцам</a></h2>
+            <div class="main clrfix">
+                <div class="col13">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/assistance-refugees/housing">Жилье</a></li>
+                        <li><a href="/ru/transnistria/assistance-refugees/clothing-footwear">Одежда и обувь</a></li>
+                    </ul>
+                </div>
+                <div class="col23">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/assistance-refugees/food">Продукты</a></li>
+                        <li><a href="/ru/transnistria/assistance-refugees/ask-for-help">Прошу помощи</a></li>
+                    </ul>
+                </div>
+                <div class="col33">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/assistance-refugees/other">Прочее</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="tub"><a href="/ru/transnistria/real-estate">Недвижимость</a></h2>
+            <div class="main clrfix">
+                <div class="col13">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/real-estate/real-estate-for-sale">Продажа</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/real-estate/real-estate-for-sale/apartments-for-sale">Продажа квартир, комнат</a></li>
+                                <li><a href="/ru/transnistria/real-estate/real-estate-for-sale/houses-for-sale">Продажа домов</a></li>
+                                <li><a href="/ru/transnistria/real-estate/real-estate-for-sale/premises-for-sale">Продажа нежилых помещений</a></li>
+                                <li><a href="/ru/transnistria/real-estate/real-estate-for-sale/plots-for-sale">Продажа земельных участков</a></li>
+                            </ul></li>
+                    </ul>
+                </div>
+                <div class="col23">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/real-estate/real-estate-for-rent">Аренда</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/real-estate/real-estate-for-rent/apartments-for-rent">Аренда квартир, комнат</a></li>
+                                <li><a href="/ru/transnistria/real-estate/real-estate-for-rent/houses-for-rent">Аренда домов</a></li>
+                                <li><a href="/ru/transnistria/real-estate/real-estate-for-rent/premises-for-rent">Аренда нежилых помещений</a></li>
+                                <li><a href="/ru/transnistria/real-estate/real-estate-for-rent/plots-for-rent">Аренда земельных участков</a></li>
+                            </ul></li>
+                    </ul>
+                </div>
+                <div class="col33">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/real-estate/exchange">Обмен</a></li>
+                        <li><a href="/ru/transnistria/real-estate/buy-and-rent">Куплю, возьму в аренду</a></li>
+                        <li><a href="/ru/transnistria/real-estate/real-estate-services">Риэлторские услуги</a></li>
+                        <li><a href="/ru/transnistria/real-estate/real-estate-abroad">Недвижимость за рубежом</a></li>
+                        <li><a href="/ru/transnistria/real-estate/different">Прочее</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="tub"><a href="/ru/transnistria/transport">Транспорт</a></h2>
+            <div class="main clrfix">
+                <div class="col13">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/transport/cars">Легковые автомобили</a></li>
+                        <li><a href="/ru/transnistria/transport/automotive-parts">Автокомплектующие</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/transport/automotive-parts/used-parts">Разборка авто</a></li>
+                                <li><a href="/ru/transnistria/transport/automotive-parts/suspension-drive-transmission">Подвеска, привод, трансмиссия</a></li>
+                                <li><a href="/ru/transnistria/transport/automotive-parts/engine-components">Двигатель - системы и компоненты</a></li>
+                                <li><a href="/ru/transnistria/transport/automotive-parts/car-body">Детали кузова</a></li>
+                                <li><a href="/ru/transnistria/transport/automotive-parts/tires">Шины</a></li>
+                                <li><a href="/ru/transnistria/transport/automotive-parts/tuning-and-accessories">Тюнинг, аксессуары</a></li>
+                                <li><a href="/ru/transnistria/transport/automotive-parts/wheels-and-wheel-caps">Диски и колпаки</a></li>
+                                <li><a href="/ru/transnistria/transport/automotive-parts/spares-for-maintenance">Запчасти для ТО</a></li>
+                                <li><a href="/ru/transnistria/transport/automotive-parts/electronics">Электрика - электроника</a></li>
+                                <li><a href="/ru/transnistria/transport/automotive-parts/oils-and-lubricants">Масла, смазки</a></li>
+                                <li><a href="/ru/transnistria/transport/automotive-parts/lights-and-optics">Фары, оптика, освещение</a></li>
+                                <li><a href="/ru/transnistria/transport/automotive-parts/car-glass-and-mirrors">Стекла, зеркала</a></li>
+                                <li><a href="/ru/transnistria/transport/automotive-parts/conditioners-and-heaters">Кондиционеры, печки</a></li>
+                                <li><a href="/ru/transnistria/transport/automotive-parts/batteries">Аккумуляторы</a></li>
+                                <li><a href="/ru/transnistria/transport/automotive-parts/autochemistry">Автохимия</a></li>
+                                <li><a href="/ru/transnistria/transport/automotive-parts/alarm-systems">Противоугонные системы, сигнализация</a></li>
+                                <li><a href="/ru/transnistria/transport/automotive-parts/miscellaneous">Прочее</a></li>
+                            </ul></li>
+                    </ul>
+                </div>
+                <div class="col23">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/transport/transportation">Перевозки</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/transport/transportation/passenger-transportation">Пассажирские перевозки</a></li>
+                                <li><a href="/ru/transnistria/transport/transportation/cargo-transportation">Грузоперевозки</a></li>
+                                <li><a href="/ru/transnistria/transport/transportation/porters">Грузчики</a></li>
+                                <li><a href="/ru/transnistria/transport/transportation/breakdown-truck-services">Услуги эвакуатора</a></li>
+                            </ul></li>
+                        <li><a href="/ru/transnistria/transport/car-repair">Ремонт и автосервис</a></li>
+                        <li><a href="/ru/transnistria/transport/trucks">Грузовые автомобили</a></li>
+                        <li><a href="/ru/transnistria/transport/buses">Автобусы</a></li>
+                        <li><a href="/ru/transnistria/transport/trailers">Прицепы</a></li>
+                        <li><a href="/ru/transnistria/transport/motorcycles">Мото</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/transport/motorcycles/moto">Мотоциклы</a></li>
+                                <li><a href="/ru/transnistria/transport/motorcycles/scooters">Мопеды, скутеры</a></li>
+                                <li><a href="/ru/transnistria/transport/motorcycles/quads">Квадроциклы</a></li>
+                                <li><a href="/ru/transnistria/transport/motorcycles/accessories">Аксессуары</a></li>
+                                <li><a href="/ru/transnistria/transport/motorcycles/wheels">Шины, диски</a></li>
+                                <li><a href="/ru/transnistria/transport/motorcycles/spare-parts">Запчасти, комплектующие</a></li>
+                                <li><a href="/ru/transnistria/transport/motorcycles/misc">Прочее</a></li>
+                            </ul></li>
+                    </ul>
+                </div>
+                <div class="col33">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/sport-and-leisure/cycle-racing/bicycles" title="Это ссылка на рубрику &quot;Велосипеды&quot; в разделе &quot;Туризм, спорт и отдых&quot;">Велосипеды
+                            <div class="label-ascii-arrow">
+                                &nbsp;→
+                            </div></a></li>
+                        <li><a href="/ru/transnistria/transport/special-equipment">Спецтехника</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/transport/special-equipment/road-construction-machinery">Строительно-дорожная техника</a></li>
+                                <li><a href="/ru/transnistria/transport/special-equipment/loader">Погрузчики</a></li>
+                                <li><a href="/ru/transnistria/transport/special-equipment/excavators">Экскаваторы</a></li>
+                            </ul></li>
+                        <li><a href="/ru/transnistria/transport/car-electronics">Аудио, видеосистемы</a></li>
+                        <li><a href="/ru/transnistria/transport/video-recorder">Видеорегистраторы</a></li>
+                        <li><a href="/ru/transnistria/transport/navigators">Навигаторы</a></li>
+                        <li><a href="/ru/transnistria/weddings-and-celebration/transport-for-parties" title="Это ссылка на рубрику &quot;Транспорт для торжеств&quot; в разделе &quot;Свадьбы, праздники и подарки&quot;">Транспорт для торжеств
+                            <div class="label-ascii-arrow">
+                                &nbsp;→
+                            </div></a></li>
+                        <li><a href="/ru/transnistria/transport/other-types-transport">Другие виды транспорта</a></li>
+                        <li><a href="/ru/transnistria/transport/temp-transport">Прочее</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="tub"><a href="/ru/transnistria/job">Работа и обучение</a></h2>
+            <div class="main clrfix">
+                <div class="col13">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/job/job-offers">Работа, вакансии</a></li>
+                    </ul>
+                </div>
+                <div class="col23">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/job/looking-for-job">Ищу работу</a></li>
+                    </ul>
+                </div>
+                <div class="col33">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/job/education">Обучение, курсы, репетиторство</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="tub"><a href="/ru/transnistria/services">Услуги</a></h2>
+            <div class="main clrfix">
+                <div class="col13">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/services/bussiness-consulting">Бизнес и консалтинг</a></li>
+                        <li><a href="/ru/transnistria/services/health-and-beauty">Здоровье и красота</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/services/health-and-beauty/beauty-salon">Салон красоты</a></li>
+                                <li><a href="/ru/transnistria/services/health-and-beauty/medical-services">Медицинские услуги</a></li>
+                                <li><a href="/ru/transnistria/services/health-and-beauty/massotherapy">Лечебный массаж</a></li>
+                                <li><a href="/ru/transnistria/services/health-and-beauty/alternative-medicine">Нетрадиционная медицина</a></li>
+                                <li><a href="/ru/transnistria/services/health-and-beauty/psychology-consultation">Консультации психолога</a></li>
+                                <li><a href="/ru/transnistria/odds-and-ends-exchange-and-buy/medical-supplies" title="Это ссылка на рубрику &quot;Медицинские товары&quot; в разделе &quot;Прочее&quot;">Медицинские товары
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/services/health-and-beauty/makeup">Визаж и макияж</a></li>
+                                <li><a href="/ru/transnistria/services/health-and-beauty/fashion-and-style">Мода и стиль</a></li>
+                                <li><a href="/ru/transnistria/services/health-and-beauty/hairdressers">Парикмахерские услуги</a></li>
+                                <li><a href="/ru/transnistria/services/health-and-beauty/cosmetology-services">Косметологические услуги</a></li>
+                                <li><a href="/ru/transnistria/odds-and-ends-exchange-and-buy/perfumes-and-cosmetics" title="Это ссылка на рубрику &quot;Парфюмерия и косметика&quot; в разделе &quot;Прочее&quot;">Парфюмерия и косметика
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/services/health-and-beauty/miscellaneous">Прочее</a></li>
+                            </ul></li>
+                        <li><a href="/ru/transnistria/services/messages">Помощь и консультирование</a></li>
+                    </ul>
+                </div>
+                <div class="col23">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/services/dry-cleaning">Химчистка</a></li>
+                        <li><a href="/ru/transnistria/services/housework-and-dry-cleaning">Помощь по дому</a></li>
+                        <li><a href="/ru/transnistria/services/translations">Переводы</a></li>
+                        <li><a href="/ru/transnistria/services/predictions">Предсказания</a></li>
+                        <li><a href="/ru/transnistria/services/funeral-services">Ритуальные услуги</a></li>
+                        <li><a href="/ru/transnistria/services/advertising-design">Реклама и дизайн</a></li>
+                        <li><a href="/ru/transnistria/services/other-services">Другие услуги</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/informational-messages/lost-and-found-office" title="Это ссылка на рубрику &quot;Утеряно/Найдено&quot; в разделе &quot;Информационные сообщения&quot;">Утеряно/Найдено
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/transport/transportation/porters" title="Это ссылка на рубрику &quot;Грузчики&quot; в разделе &quot;Транспорт&quot;">Грузчики
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/transport/car-repair" title="Это ссылка на рубрику &quot;Ремонт и автосервис&quot; в разделе &quot;Транспорт&quot;">Ремонт и автосервис
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/household-products/repair-of-household-appliances" title="Это ссылка на рубрику &quot;Ремонт и обслуживание бытовой техники&quot; в разделе &quot;Бытовая техника&quot;">Ремонт бытовой техники
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/real-estate/real-estate-services" title="Это ссылка на рубрику &quot;Риэлторские услуги&quot; в разделе &quot;Недвижимость&quot;">Риэлторские услуги
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/architecture-and-design" title="Это ссылка на рубрику &quot;Архитектура и дизайн&quot; в разделе &quot;Строительство и ремонт&quot;">Архитектура и дизайн
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/transport/transportation/breakdown-truck-services" title="Это ссылка на рубрику &quot;Услуги эвакуатора&quot; в разделе &quot;Транспорт&quot;">Услуги эвакуатора
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/computers-and-office-equipment/computer-and-internet-services" title="Это ссылка на рубрику &quot;Компьютерные и интернет услуги&quot; в разделе &quot;Компьютеры, оргтехника и IT&quot;">Компьютерные и интернет услуги
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/phones-and-communications/phone-service-and-repair" title="Это ссылка на рубрику &quot;Ремонт и сервис телефонов&quot; в разделе &quot;Телефоны и связь&quot;">Ремонт и сервис телефонов
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/professional-photo-and-video" title="Это ссылка на рубрику &quot;Профессиональная фото и видеосъемка&quot; в разделе &quot;Аудио, видео, фото, ТВ&quot;">Профессиональная фото- и видеосъемка
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/photo-and-video-processing-montage" title="Это ссылка на рубрику &quot;Обработка фото и видео, монтаж&quot; в разделе &quot;Аудио, видео, фото, ТВ&quot;">Обработка фото и видео, монтаж
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/lighting-and-phonics/recording" title="Это ссылка на рубрику &quot;Звукозапись&quot; в разделе &quot;Аудио, видео, фото, ТВ&quot;">Звукозапись
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/clothing-footwear-accessories/footwear-repair" title="Это ссылка на рубрику &quot;Изготовление и ремонт обуви&quot; в разделе &quot;Одежда, обувь, аксессуары&quot;">Изготовление и ремонт обуви
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/clothing-footwear-accessories/clothing-repair" title="Это ссылка на рубрику &quot;Пошив и ремонт одежды&quot; в разделе &quot;Одежда, обувь, аксессуары&quot;">Пошив и ремонт одежды
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/furniture-and-interior/furniture-manufacturing-and-repair" title="Это ссылка на рубрику &quot;Изготовление и ремонт мебели&quot; в разделе &quot;Мебель и интерьер&quot;">Изготовление и ремонт мебели
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/repair-and-service" title="Это ссылка на рубрику &quot;Ремонт электроники&quot; в разделе &quot;Аудио, видео, фото, ТВ&quot;">Ремонт электроники
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/products-for-children/governesses" title="Это ссылка на рубрику &quot;Услуги няни, гувернантки&quot; в разделе &quot;Все для детей&quot;">Услуги няни, гувернантки
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/music-books-art/repair-of-musical-instruments" title="Это ссылка на рубрику &quot;Ремонт и настройка инструментов&quot; в разделе &quot;Музыка, книги, искусство&quot;">Ремонт и настройка музыкальных инструментов
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/agribusiness/farm-work" title="Это ссылка на рубрику &quot;Сельхозработы&quot; в разделе &quot;Дачное и сельское хозяйство&quot;">Сельхозработы
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/plants-and-animals/vet-services" title="Это ссылка на рубрику &quot;Услуги ветеринаров&quot; в разделе &quot;Растения и животные&quot;">Услуги ветеринаров
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/industrial-and-commercial-equipment/security-and-safety/security-and-detectives" title="Это ссылка на рубрику &quot;Безопасность и детективы&quot; в разделе &quot;Оборудование и приборы&quot;">Услуги детективов
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/services/other-services/different">Прочее</a></li>
+                            </ul></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="tub"><a href="/ru/transnistria/construction-and-repair">Строительство и ремонт</a></h2>
+            <div class="main clrfix">
+                <div class="col13">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/construction-and-repair/construction-and-repair">Строительные услуги и ремонт</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/construction-and-repair/construction-and-repair/walls-and-ceilings-decoration">Отделка стен и потолков</a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/construction-and-repair/complex-repairs">Ремонт под ключ</a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/construction-and-repair/plumbing">Сантехработы</a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/construction-and-repair/electrical-works">Электроработы</a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/construction-and-repair/wall-insulation">Утепление стен, фасадов</a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/construction-and-repair/floor-repairing">Укладка и ремонт полов</a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/construction-and-repair/roofing">Кровельные работы</a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/construction-and-repair/drilling-and-logging">Сверление и вырубка</a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/construction-and-repair/doors-installation">Ремонт, установка дверей, окон, замков</a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/construction-and-repair/construction-machinery-services">Услуги строительной техники</a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/construction-and-repair/miscellaneous">Прочее</a></li>
+                            </ul></li>
+                    </ul>
+                </div>
+                <div class="col23">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/construction-and-repair/construction-materials">Строительные товары и материалы</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/construction-and-repair/construction-materials/windows-and-doors">Окна и двери</a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/construction-materials/metals-and-metal-products">Металлы и изделия</a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/construction-materials/materials">Строительные материалы</a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/construction-materials/plumbing-heating-and-water-supply">Сантехника, отопление и водоснабжение</a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/construction-materials/lumber-and-products">Пиломатериалы и изделия</a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/construction-materials/finishing-materials">Отделочные материалы</a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/construction-materials/roofing-materials">Кровельные материалы</a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/construction-materials/shutters">Жалюзи и ролеты</a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/construction-materials/electric-materials-and-lighting">Электрооборудование</a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/construction-materials/miscellaneous">Прочее</a></li>
+                            </ul></li>
+                    </ul>
+                </div>
+                <div class="col33">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/construction-and-repair/equipment-housekeeping">Хозяйственные товары</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/construction-and-repair/equipment-housekeeping/fuel-and-raw-materials">Топливо и сырье</a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/equipment-housekeeping/barrels-canisters-containers">Бочки, канистры, емкости</a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/equipment-housekeeping/miscellaneous">Прочее</a></li>
+                            </ul></li>
+                        <li><a href="/ru/transnistria/construction-and-repair/architecture-and-design">Архитектура и дизайн</a></li>
+                        <li><a href="/ru/transnistria/construction-and-repair/tools">Инструменты</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/construction-and-repair/tools/power-tools">Электроинструменты</a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/tools/hand-tools">Ручные инструменты</a></li>
+                                <li><a href="/ru/transnistria/construction-and-repair/tools/expendables">Расходные материалы</a></li>
+                            </ul></li>
+                        <li><a href="/ru/transnistria/construction-and-repair/construction-miscellaneous">Прочее</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="tub"><a href="/ru/transnistria/furniture-and-interior">Мебель и интерьер</a></h2>
+            <div class="main clrfix">
+                <div class="col13">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/furniture-and-interior/furniture">Мебель для дома</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/furniture-and-interior/furniture/tables-and-chairs">Столы и стулья</a></li>
+                                <li><a href="/ru/transnistria/furniture-and-interior/furniture/wall-units">Стенки и шкафы</a></li>
+                                <li><a href="/ru/transnistria/furniture-and-interior/furniture/kitchen-furniture-sets">Кухни</a></li>
+                                <li><a href="/ru/transnistria/furniture-and-interior/furniture/bedroom-suites">Спальни</a></li>
+                                <li><a href="/ru/transnistria/furniture-and-interior/furniture/lobby-furniture">Прихожие</a></li>
+                                <li><a href="/ru/transnistria/furniture-and-interior/furniture/upholstered-furniture">Мягкая мебель</a></li>
+                                <li><a href="/ru/transnistria/furniture-and-interior/furniture/miscellaneous">Прочее</a></li>
+                                <li><a href="/ru/transnistria/furniture-and-interior/furniture-for-country-houses">Дачная и садовая мебель</a></li>
+                            </ul></li>
+                    </ul>
+                </div>
+                <div class="col23">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/furniture-and-interior/office-furniture">Офисная мебель</a></li>
+                        <li><a href="/ru/transnistria/furniture-and-interior/furniture-for-restaurants">Мебель для ресторанов, кафе</a></li>
+                        <li><a href="/ru/transnistria/furniture-and-interior/furniture-for-shops">Мебель для магазинов</a></li>
+                        <li><a href="/ru/transnistria/furniture-and-interior/furniture-for-children">Детская мебель</a></li>
+                        <li><a href="/ru/transnistria/furniture-and-interior/all-for-the-comfort">Все для комфорта</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/furniture-and-interior/all-for-the-comfort/textile-and-bedding">Ткани и постельное белье</a></li>
+                                <li><a href="/ru/transnistria/furniture-and-interior/all-for-the-comfort/mattresses">Матрацы</a></li>
+                                <li><a href="/ru/transnistria/furniture-and-interior/all-for-the-comfort/carpets">Ковры и паласы</a></li>
+                                <li><a href="/ru/transnistria/furniture-and-interior/all-for-the-comfort/antiques-and-work-of-art">Антиквариат, предметы искусства, часы</a></li>
+                                <li><a href="/ru/transnistria/furniture-and-interior/all-for-the-comfort/curtains-and-jalousie">Шторы, жалюзи</a></li>
+                                <li><a href="/ru/transnistria/furniture-and-interior/all-for-the-comfort/lighting-rigs">Светильники, люстры, лампы</a></li>
+                                <li><a href="/ru/transnistria/furniture-and-interior/all-for-the-comfort/tableware">Посуда</a></li>
+                                <li><a href="/ru/transnistria/furniture-and-interior/all-for-the-comfort/household-chemistry">Бытовая химия</a></li>
+                                <li><a href="/ru/transnistria/furniture-and-interior/all-for-the-comfort/miscellaneous">Прочее</a></li>
+                            </ul></li>
+                    </ul>
+                </div>
+                <div class="col33">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/furniture-and-interior/furniture-manufacturing-and-repair">Изготовление и ремонт мебели</a></li>
+                        <li><a href="/ru/transnistria/furniture-and-interior/different">Прочее</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="tub"><a href="/ru/transnistria/clothing-footwear-accessories">Одежда, обувь, аксессуары</a></h2>
+            <div class="main clrfix">
+                <div class="col13">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/clothing-footwear-accessories/clothing">Одежда</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/clothing-footwear-accessories/clothing/womens-clothing">Женская одежда</a></li>
+                                <li><a href="/ru/transnistria/clothing-footwear-accessories/clothing/mens-clothing">Мужская одежда</a></li>
+                                <li><a href="/ru/transnistria/clothing-footwear-accessories/clothing/childrens-clothing">Детская одежда</a></li>
+                            </ul></li>
+                        <li><a href="/ru/transnistria/clothing-footwear-accessories/shoes">Обувь</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/clothing-footwear-accessories/shoes/footwear-women">Женская обувь</a></li>
+                                <li><a href="/ru/transnistria/clothing-footwear-accessories/shoes/footwear-men">Мужская обувь</a></li>
+                                <li><a href="/ru/transnistria/clothing-footwear-accessories/shoes/footwear-children">Детская обувь</a></li>
+                            </ul></li>
+                    </ul>
+                </div>
+                <div class="col23">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/clothing-footwear-accessories/working-clothes">Спецодежда</a></li>
+                        <li><a href="/ru/transnistria/clothing-footwear-accessories/accessories-and-haberdashery">Аксессуары и галантерея</a></li>
+                        <li><a href="/ru/transnistria/clothing-footwear-accessories/jewellery-and-watches">Бижутерия, ювелирные изделия и часы</a></li>
+                        <li><a href="/ru/transnistria/clothing-footwear-accessories/footwear-repair">Изготовление и ремонт обуви</a></li>
+                        <li><a href="/ru/transnistria/clothing-footwear-accessories/clothing-repair">Пошив и ремонт одежды</a></li>
+                    </ul>
+                </div>
+                <div class="col33">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/clothing-footwear-accessories/miscellaneous">Прочее</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="tub"><a href="/ru/transnistria/products-for-children">Все для детей</a></h2>
+            <div class="main clrfix">
+                <div class="col13">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/furniture-and-interior/furniture-for-children" title="Это ссылка на рубрику &quot;Детская мебель&quot; в разделе &quot;Мебель и интерьер&quot;">Детская мебель
+                            <div class="label-ascii-arrow">
+                                &nbsp;→
+                            </div></a></li>
+                        <li><a href="/ru/transnistria/clothing-footwear-accessories/clothing/childrens-clothing" title="Это ссылка на рубрику &quot;Детская одежда&quot; в разделе &quot;Одежда, обувь, аксессуары&quot;">Детская одежда
+                            <div class="label-ascii-arrow">
+                                &nbsp;→
+                            </div></a></li>
+                        <li><a href="/ru/transnistria/clothing-footwear-accessories/shoes/footwear-children" title="Это ссылка на рубрику &quot;Детская обувь&quot; в разделе &quot;Одежда, обувь, аксессуары&quot;">Детская обувь
+                            <div class="label-ascii-arrow">
+                                &nbsp;→
+                            </div></a></li>
+                    </ul>
+                </div>
+                <div class="col23">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/products-for-children/toys">Игрушки</a></li>
+                        <li><a href="/ru/transnistria/products-for-children/prams">Коляски</a></li>
+                        <li><a href="/ru/transnistria/products-for-children/seats">Автокресла</a></li>
+                    </ul>
+                </div>
+                <div class="col33">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/products-for-children/everything-for-school">Все для школы</a></li>
+                        <li><a href="/ru/transnistria/products-for-children/governesses">Услуги няни, гувернантки</a></li>
+                        <li><a href="/ru/transnistria/products-for-children/miscellaneous">Прочее</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="tub"><a href="/ru/transnistria/handmade">Handmade</a></h2>
+            <div class="main clrfix">
+                <div class="col13">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/handmade/ornamentation-and-accessories">Украшения и аксессуары</a></li>
+                        <li><a href="/ru/transnistria/handmade/toys-and-dolls">Игрушки, куклы, все для детей</a></li>
+                        <li><a href="/ru/transnistria/handmade/sewing-knitting-embroidery">Шитье, вязание, вышивка</a></li>
+                        <li><a href="/ru/transnistria/handmade/paintings">Художественная роспись, картины</a></li>
+                    </ul>
+                </div>
+                <div class="col23">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/handmade/postcards-and-paper-products">Открытки, конверты, все из бумаги</a></li>
+                        <li><a href="/ru/transnistria/handmade/interior-and-dishes">Предметы интерьера, посуда</a></li>
+                        <li><a href="/ru/transnistria/handmade/handmade-gifts-and-souvenirs">Подарки и сувениры ручной работы</a></li>
+                        <li><a href="/ru/transnistria/handmade/woodwork">Изделия из дерева</a></li>
+                    </ul>
+                </div>
+                <div class="col33">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/handmade/soap-and-candles">Мыло и свечи</a></li>
+                        <li><a href="/ru/transnistria/handmade/misc">Прочее</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="tub"><a href="/ru/transnistria/computers-and-office-equipment">Компьютеры, оргтехника и IT</a></h2>
+            <div class="main clrfix">
+                <div class="col13">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/computers-and-office-equipment/desktops">Настольные компьютеры</a></li>
+                        <li><a href="/ru/transnistria/computers-and-office-equipment/laptops">Ноутбуки</a></li>
+                        <li><a href="/ru/transnistria/computers-and-office-equipment/tablets">Планшеты</a></li>
+                        <li><a href="/ru/transnistria/computers-and-office-equipment/e-books">Электронные книги</a></li>
+                        <li><a href="/ru/transnistria/computers-and-office-equipment/servers">Серверы</a></li>
+                        <li><a href="/ru/transnistria/computers-and-office-equipment/game-consoles">Игровые приставки</a></li>
+                        <li><a href="/ru/transnistria/computers-and-office-equipment/peripherals">Периферийное оборудование</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/computers-and-office-equipment/peripherals/monitors">Мониторы</a></li>
+                                <li><a href="/ru/transnistria/computers-and-office-equipment/peripherals/keyboards-and-mouses">Клавиатуры, мыши, игровые манипуляторы</a></li>
+                                <li><a href="/ru/transnistria/computers-and-office-equipment/peripherals/webcams">Вебкамеры</a></li>
+                                <li><a href="/ru/transnistria/computers-and-office-equipment/peripherals/speakers">Акустические системы</a></li>
+                                <li><a href="/ru/transnistria/computers-and-office-equipment/peripherals/cables-and-adapters">Провода, переходники</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/audio/microphones-headphones" title="Это ссылка на рубрику &quot;Микрофоны, наушники&quot; в разделе &quot;Аудио, видео, фото, ТВ&quot;">Микрофоны, наушники
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                            </ul></li>
+                    </ul>
+                </div>
+                <div class="col23">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/computers-and-office-equipment/components">Комплектующие</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/computers-and-office-equipment/components/motherboards">Материнские платы</a></li>
+                                <li><a href="/ru/transnistria/computers-and-office-equipment/components/processors">Процессоры</a></li>
+                                <li><a href="/ru/transnistria/computers-and-office-equipment/components/display-adapters">Видеокарты</a></li>
+                                <li><a href="/ru/transnistria/computers-and-office-equipment/components/pc-cases">Корпуса</a></li>
+                                <li><a href="/ru/transnistria/computers-and-office-equipment/components/power-units">Блоки питания</a></li>
+                                <li><a href="/ru/transnistria/computers-and-office-equipment/components/ram">Модули памяти</a></li>
+                                <li><a href="/ru/transnistria/computers-and-office-equipment/components/storage-devices">Накопители (HDD, SSD, Flash)</a></li>
+                                <li><a href="/ru/transnistria/computers-and-office-equipment/components/optical-drives">Оптические приводы</a></li>
+                                <li><a href="/ru/transnistria/computers-and-office-equipment/components/accumulators-and-the-rest">Источники питания, UPS, сетевые фильтры</a></li>
+                                <li><a href="/ru/transnistria/computers-and-office-equipment/components/network-equipment">Сетевое оборудование</a></li>
+                                <li><a href="/ru/transnistria/computers-and-office-equipment/components/miscellaneous">Прочее</a></li>
+                            </ul></li>
+                    </ul>
+                </div>
+                <div class="col33">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/computers-and-office-equipment/office-equipment">Оргтехника</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/computers-and-office-equipment/office-equipment/printers">Принтеры</a></li>
+                                <li><a href="/ru/transnistria/computers-and-office-equipment/office-equipment/scanners">Сканеры</a></li>
+                                <li><a href="/ru/transnistria/computers-and-office-equipment/office-equipment/copiers">Копировальные аппараты, МФУ</a></li>
+                                <li><a href="/ru/transnistria/computers-and-office-equipment/office-equipment/consumables">Расходные материалы</a></li>
+                                <li><a href="/ru/transnistria/computers-and-office-equipment/office-equipment/miscellaneous">Прочее</a></li>
+                            </ul></li>
+                        <li><a href="/ru/transnistria/computers-and-office-equipment/software">Программное обеспечение</a></li>
+                        <li><a href="/ru/transnistria/computers-and-office-equipment/computer-and-internet-services">Компьютерные и интернет услуги</a></li>
+                        <li><a href="/ru/transnistria/computers-and-office-equipment/accessories">Аксессуары</a></li>
+                        <li><a href="/ru/transnistria/computers-and-office-equipment/office-equipment-repair-and-maintenance">Ремонт и обслуживание оргтехники</a></li>
+                        <li><a href="/ru/transnistria/computers-and-office-equipment/miscellaneous">Прочее</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="tub"><a href="/ru/transnistria/audio-photo-video">Аудио, видео, фото, ТВ</a></h2>
+            <div class="main clrfix">
+                <div class="col13">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/audio-photo-video/audio">Аудио</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/audio-photo-video/audio/players">Плееры</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/audio/dictaphones">Диктофоны</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/audio/speakers-and-acoustic-systems">Колонки и акустические системы</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/audio/microphones-headphones">Микрофоны, наушники</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/audio/home-stereos">Музыкальные центры</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/audio/amplifiers">Усилители</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/audio/components-and-accessories">Комплектующие и аксессуары</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/audio/music">Музыка</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/audio/studio-equipment">Студийное оборудование</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/audio/miscellaneous">Прочее</a></li>
+                            </ul></li>
+                        <li><a href="/ru/transnistria/audio-photo-video/video">Видео</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/audio-photo-video/video/video-cameras">Камеры</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/video/videotape-recorders-and-cassettes">Магнитофоны и кассеты</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/video/disc-players">CD, DVD, Blu-ray плееры</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/video/projecting-cameras">Проекторы</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/video/discs-and-films">Диски, фильмы</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/video/parts-and-accessories">Комплектующие и аксессуары</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/video/miscellaneous">Прочее</a></li>
+                            </ul></li>
+                    </ul>
+                </div>
+                <div class="col23">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/audio-photo-video/photo">Фото</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/audio-photo-video/photo/digital-cameras">Цифровые фотоаппараты</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/photo/film-cameras">Пленочные фотоаппараты</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/photo/flashes-and-lighting-devices">Вспышки и осветительные приборы</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/photo/tripods-and-mounts">Штативы и крепления</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/photo/equipment-and-accessories">Оборудование и аксессуары</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/photo/miscellaneous">Прочее</a></li>
+                            </ul></li>
+                        <li><a href="/ru/transnistria/audio-photo-video/tv">ТВ</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/audio-photo-video/tv/tv-sets">Телевизоры</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/tv/home-cinemas">Домашние кинотеатры</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/tv/antennas">Антенны</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/tv/components">Комплектующие</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/tv/miscellaneous">Прочее</a></li>
+                            </ul></li>
+                        <li><a href="/ru/transnistria/audio-photo-video/optics">Оптика</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/audio-photo-video/optics/lenses">Объективы</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/optics/light-filters">Светофильтры</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/optics/binoculars-and-spyglasses">Бинокли и подзорные трубы</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/optics/telescopes-microscopes">Телескопы, микроскопы</a></li>
+                            </ul></li>
+                    </ul>
+                </div>
+                <div class="col33">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/audio-photo-video/lighting-and-phonics">Свето-, звукотехника</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/audio-photo-video/lighting-and-phonics/sound-equipment">Звуковое оборудование</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/lighting-and-phonics/lighting-equipment-and-special-effects">Световое оборудование и спецэффекты</a></li>
+                                <li><a href="/ru/transnistria/audio-photo-video/lighting-and-phonics/recording">Звукозапись</a></li>
+                            </ul></li>
+                        <li><a href="/ru/transnistria/audio-photo-video/repair-and-service">Ремонт электроники</a></li>
+                        <li><a href="/ru/transnistria/audio-photo-video/professional-photo-and-video">Профессиональная фото и видеосъемка</a></li>
+                        <li><a href="/ru/transnistria/audio-photo-video/photo-and-video-processing-montage">Обработка фото и видео, монтаж</a></li>
+                        <li><a href="/ru/transnistria/audio-photo-video/everything-else">Прочее</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="tub"><a href="/ru/transnistria/phones-and-communications">Телефоны и связь</a></h2>
+            <div class="main clrfix">
+                <div class="col13">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/phones-and-communications/mobile-phones">Мобильные телефоны</a></li>
+                        <li><a href="/ru/transnistria/phones-and-communications/accessories">Аксессуары</a></li>
+                        <li><a href="/ru/transnistria/phones-and-communications/parts-for-phones">Запчасти для телефонов</a></li>
+                        <li><a href="/ru/transnistria/phones-and-communications/gsm-modems">Модемы GSM</a></li>
+                    </ul>
+                </div>
+                <div class="col23">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/phones-and-communications/numbers-and-tickets">Номера и абонементы</a></li>
+                        <li><a href="/ru/transnistria/phones-and-communications/radiophones-and-radiostations">Радиотелефоны, рации, радиостанции</a></li>
+                        <li><a href="/ru/transnistria/phones-and-communications/faxes">Факсы</a></li>
+                        <li><a href="/ru/transnistria/phones-and-communications/fixed-phones">Стационарные телефоны</a></li>
+                    </ul>
+                </div>
+                <div class="col33">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/phones-and-communications/phone-service-and-repair">Ремонт и сервис телефонов</a></li>
+                        <li><a href="/ru/transnistria/phones-and-communications/different">Прочее</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="tub"><a href="/ru/transnistria/household-products">Бытовая техника</a></h2>
+            <div class="main clrfix">
+                <div class="col13">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/household-products/household-appliances">Техника для кухни</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/household-products/household-appliances/refrigerators">Холодильники</a></li>
+                                <li><a href="/ru/transnistria/household-products/household-appliances/freezers">Морозильники</a></li>
+                                <li><a href="/ru/transnistria/household-products/household-appliances/kitchen-stoves">Плиты и печи</a></li>
+                                <li><a href="/ru/transnistria/household-products/household-appliances/small-kitchen-equipment">Малая кухонная техника</a></li>
+                                <li><a href="/ru/transnistria/household-products/household-appliances/dishwasher">Посудомоечные машины</a></li>
+                            </ul></li>
+                    </ul>
+                </div>
+                <div class="col23">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/household-products/vacuum-cleaners">Пылесосы и полотеры</a></li>
+                        <li><a href="/ru/transnistria/household-products/washers">Стиральные машины</a></li>
+                        <li><a href="/ru/transnistria/household-products/stitching-and-knitting-machines">Швейные, вязальные машины</a></li>
+                        <li><a href="/ru/transnistria/household-products/small-things">Электромелочи</a></li>
+                        <li><a href="/ru/transnistria/household-products/repair-of-household-appliances">Ремонт и обслуживание бытовой техники</a></li>
+                    </ul>
+                </div>
+                <div class="col33">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/household-products/air-conditioners-fans">Кондиционеры, вентиляторы</a></li>
+                        <li><a href="/ru/transnistria/household-products/heaters-water-heaters">Обогреватели, водонагреватели</a></li>
+                        <li><a href="/ru/transnistria/household-products/different">Прочее</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="tub"><a href="/ru/transnistria/industrial-and-commercial-equipment">Оборудование и приборы</a></h2>
+            <div class="main clrfix">
+                <div class="col13">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/industrial-and-commercial-equipment/industrial-equipment">Промышленное оборудование</a></li>
+                        <li><a href="/ru/transnistria/industrial-and-commercial-equipment/shop-equipment">Торговое оборудование</a></li>
+                        <li><a href="/ru/transnistria/industrial-and-commercial-equipment/sewing-and-knitting-equipment">Швейное и вязальное оборудование</a></li>
+                        <li><a href="/ru/transnistria/industrial-and-commercial-equipment/instrumentation-and-tooling">Приборы и инструменты</a></li>
+                    </ul>
+                </div>
+                <div class="col23">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/industrial-and-commercial-equipment/security-and-safety">Охрана и безопасность</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/industrial-and-commercial-equipment/security-and-safety/door-intercommunication-systems-and-combination-locks">Домофоны и кодовые замки</a></li>
+                                <li><a href="/ru/transnistria/industrial-and-commercial-equipment/security-and-safety/monitoring-systems-and-protection">Системы наблюдения и защита</a></li>
+                                <li><a href="/ru/transnistria/industrial-and-commercial-equipment/security-and-safety/security-and-detectives">Безопасность и детективы</a></li>
+                                <li><a href="/ru/transnistria/industrial-and-commercial-equipment/security-and-safety/different">Прочее</a></li>
+                            </ul></li>
+                    </ul>
+                </div>
+                <div class="col33">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/industrial-and-commercial-equipment/miscellaneous">Прочее</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="tub"><a href="/ru/transnistria/sport-and-leisure">Туризм, спорт и отдых</a></h2>
+            <div class="main clrfix">
+                <div class="col13">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/sport-and-leisure/relax-and-travel">Путешествия и отдых</a></li>
+                        <li><a href="/ru/transnistria/sport-and-leisure/sporting-accessories">Спорттовары</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/sport-and-leisure/sporting-accessories/training-devices">Тренажеры и оборудование</a></li>
+                                <li><a href="/ru/transnistria/sport-and-leisure/sporting-accessories/equipment-and-inventory">Снаряжение и экипировка</a></li>
+                                <li><a href="/ru/transnistria/sport-and-leisure/sporting-accessories/sports-clothing-and-footwear">Спортивная одежда, обувь, аксессуары</a></li>
+                                <li><a href="/ru/transnistria/sport-and-leisure/sporting-accessories/sports-nutrition">Спортивное и диетическое питание</a></li>
+                                <li><a href="/ru/transnistria/sport-and-leisure/sporting-accessories/swimming-pools">Бассейны</a></li>
+                            </ul></li>
+                        <li><a href="/ru/transnistria/sport-and-leisure/sports-clubs-and-sections">Спортивные клубы и секции</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/sport-and-leisure/sports-clubs-and-sections/martial-arts">Боевые искусства</a></li>
+                                <li><a href="/ru/transnistria/sport-and-leisure/sports-clubs-and-sections/yoga-and-fitness">Йога и фитнес</a></li>
+                                <li><a href="/ru/transnistria/sport-and-leisure/sports-clubs-and-sections/dancing">Танцы</a></li>
+                                <li><a href="/ru/transnistria/sport-and-leisure/sports-clubs-and-sections/team-sports">Командные виды спорта</a></li>
+                                <li><a href="/ru/transnistria/sport-and-leisure/sports-clubs-and-sections/exercise-rooms">Тренажерные залы</a></li>
+                                <li><a href="/ru/transnistria/sport-and-leisure/sports-clubs-and-sections/tennis">Теннис</a></li>
+                                <li><a href="/ru/transnistria/sport-and-leisure/sports-clubs-and-sections/different">Прочее</a></li>
+                            </ul></li>
+                    </ul>
+                </div>
+                <div class="col23">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/sport-and-leisure/cycle-racing">Велоспорт</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/sport-and-leisure/cycle-racing/bicycles">Велосипеды</a></li>
+                                <li><a href="/ru/transnistria/sport-and-leisure/cycle-racing/accessories">Аксессуары</a></li>
+                                <li><a href="/ru/transnistria/sport-and-leisure/cycle-racing/components">Комплектующие</a></li>
+                            </ul></li>
+                        <li><a href="/ru/transnistria/sport-and-leisure/extreme-sports">Экстремальные виды спорта</a></li>
+                        <li><a href="/ru/transnistria/sport-and-leisure/hunting-and-fishing">Охота и рыболовство</a></li>
+                        <li><a href="/ru/transnistria/sport-and-leisure/entertainment-and-hobby">Развлечения и хобби</a></li>
+                        <li><a href="/ru/transnistria/sport-and-leisure/sauna-and-bath">Сауны и бани</a></li>
+                    </ul>
+                </div>
+                <div class="col33">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/sport-and-leisure/miscellaneous">Прочее</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="tub"><a href="/ru/transnistria/plants-and-animals">Растения и животные</a></h2>
+            <div class="main clrfix">
+                <div class="col13">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/plants-and-animals/dogs">Собаки</a></li>
+                        <li><a href="/ru/transnistria/plants-and-animals/cats">Кошки</a></li>
+                        <li><a href="/ru/transnistria/plants-and-animals/rodents">Грызуны</a></li>
+                        <li><a href="/ru/transnistria/plants-and-animals/birds">Птицы</a></li>
+                    </ul>
+                </div>
+                <div class="col23">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/plants-and-animals/fishes">Рыбы</a></li>
+                        <li><a href="/ru/transnistria/plants-and-animals/other-animals">Другие животные</a></li>
+                        <li><a href="/ru/transnistria/plants-and-animals/goods-and-services-for-animals">Товары для животных</a></li>
+                        <li><a href="/ru/transnistria/plants-and-animals/house-plants">Комнатные растения</a></li>
+                    </ul>
+                </div>
+                <div class="col33">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/plants-and-animals/fertilizer-equipment-supplies">Удобрения, инвентарь</a></li>
+                        <li><a href="/ru/transnistria/plants-and-animals/breeding-services">Услуги и вязка</a></li>
+                        <li><a href="/ru/transnistria/plants-and-animals/vet-services">Услуги ветеринаров</a></li>
+                        <li><a href="/ru/transnistria/plants-and-animals/different">Прочее</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="tub"><a href="/ru/transnistria/agribusiness">Дачное и сельское хозяйство</a></h2>
+            <div class="main clrfix">
+                <div class="col13">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/agribusiness/fertilizers">Удобрения, химикаты</a></li>
+                        <li><a href="/ru/transnistria/agribusiness/farming-machines">Сельхозтехника</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/agribusiness/farming-machines/mechanisms">Техника</a></li>
+                                <li><a href="/ru/transnistria/agribusiness/farming-machines/equipment-inventory">Оборудование, инвентарь</a></li>
+                            </ul></li>
+                        <li><a href="/ru/transnistria/agribusiness/farm-implements">Садовый инвентарь</a></li>
+                    </ul>
+                </div>
+                <div class="col23">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/agribusiness/livestock">Сельхозживотные, птицы</a></li>
+                        <li><a href="/ru/transnistria/agribusiness/feedstuff">Корма</a></li>
+                        <li><a href="/ru/transnistria/agribusiness/farm-work">Сельхозработы</a></li>
+                        <li><a href="/ru/transnistria/furniture-and-interior/furniture-for-country-houses" title="Это ссылка на рубрику &quot;Дачная и садовая мебель&quot; в разделе &quot;Мебель и интерьер&quot;">Дачная и садовая мебель
+                            <div class="label-ascii-arrow">
+                                &nbsp;→
+                            </div></a></li>
+                        <li><a href="/ru/transnistria/agribusiness/seed">Семена и рассада</a></li>
+                    </ul>
+                </div>
+                <div class="col33">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/agribusiness/trees-and-shrubs">Деревья, кустарники, саженцы</a></li>
+                        <li><a href="/ru/transnistria/agribusiness/fresh-fruits-and-vegetables">Свежие фрукты и овощи</a></li>
+                        <li><a href="/ru/transnistria/agribusiness/others">Прочее</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="tub"><a href="/ru/transnistria/dating">Знакомства</a></h2>
+            <div class="main clrfix">
+                <div class="col13">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/dating/looking-for-friends">Ищу друзей</a></li>
+                    </ul>
+                </div>
+                <div class="col23">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/dating/looking-for-partners">Ищу партнеров</a></li>
+                    </ul>
+                </div>
+                <div class="col33">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/dating/marriage-posts">Брачные сообщения</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="tub"><a href="/ru/transnistria/weddings-and-celebration">Свадьбы, праздники и подарки</a></h2>
+            <div class="main clrfix">
+                <div class="col13">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/weddings-and-celebration/halls-for-festivities">Залы для торжеств</a></li>
+                        <li><a href="/ru/transnistria/weddings-and-celebration/music-and-masters-of-ceremonies">Музыка, аниматоры и ведущие</a></li>
+                        <li><a href="/ru/transnistria/weddings-and-celebration/transport-for-parties">Транспорт для торжеств</a></li>
+                        <li><a href="/ru/transnistria/weddings-and-celebration/for-rent">Сдаю напрокат</a></li>
+                    </ul>
+                </div>
+                <div class="col23">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/weddings-and-celebration/planning-and-decorating-festivities">Оформление торжеств</a></li>
+                        <li><a href="/ru/transnistria/clothing-footwear-accessories/clothing/womens-clothing#list&amp;field_330[]=1457" title="Это ссылка на рубрику &quot;Женская одежда&quot; в разделе &quot;Одежда, обувь, аксессуары&quot; с фильтром &quot;Свадебные платья&quot;">Свадебные платья
+                            <div class="label-ascii-arrow">
+                                &nbsp;→
+                            </div></a></li>
+                        <li><a href="/ru/transnistria/clothing-footwear-accessories/clothing/mens-clothing#list&amp;field_332[]=1478" title="Это ссылка на рубрику &quot;Мужская одежда&quot; в разделе &quot;Одежда, обувь, аксессуары&quot; с фильтром &quot;Пиджаки, костюмы&quot;">Костюмы, пиджаки, смокинги
+                            <div class="label-ascii-arrow">
+                                &nbsp;→
+                            </div></a></li>
+                        <li><a href="/ru/transnistria/weddings-and-celebration/carnival-costumes-and-accessories">Карнавальные костюмы и аксессуары</a></li>
+                    </ul>
+                </div>
+                <div class="col33">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/audio-photo-video/professional-photo-and-video" title="Это ссылка на рубрику &quot;Профессиональная фото и видеосъемка&quot; в разделе &quot;Аудио, видео, фото, ТВ&quot;">Фото-, видеосъемка
+                            <div class="label-ascii-arrow">
+                                &nbsp;→
+                            </div></a></li>
+                        <li><a href="/ru/transnistria/services/health-and-beauty/makeup" title="Это ссылка на рубрику &quot;Визаж и макияж&quot; в разделе &quot;Услуги&quot;">Свадебный макияж
+                            <div class="label-ascii-arrow">
+                                &nbsp;→
+                            </div></a></li>
+                        <li><a href="/ru/transnistria/weddings-and-celebration/gifts-and-souvenirs">Подарки и сувениры</a></li>
+                        <li><a href="/ru/transnistria/weddings-and-celebration/miscellaneous">Прочее</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="tub"><a href="/ru/transnistria/music-books-art">Музыка, книги, искусство</a></h2>
+            <div class="main clrfix">
+                <div class="col13">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/music-books-art/musical-instruments">Музыкальные инструменты</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/music-books-art/musical-instruments/guitars">Гитары</a></li>
+                                <li><a href="/ru/transnistria/music-books-art/musical-instruments/pianos">Пианино и рояли</a></li>
+                                <li><a href="/ru/transnistria/music-books-art/musical-instruments/composers">Синтезаторы и midi-клавиатуры</a></li>
+                                <li><a href="/ru/transnistria/music-books-art/musical-instruments/the-percussion">Ударные инструменты</a></li>
+                                <li><a href="/ru/transnistria/music-books-art/musical-instruments/the-wind">Духовые инструменты</a></li>
+                                <li><a href="/ru/transnistria/music-books-art/musical-instruments/bow-instruments">Смычковые инструменты</a></li>
+                                <li><a href="/ru/transnistria/music-books-art/musical-instruments/accordions">Баяны и аккордеоны</a></li>
+                                <li><a href="/ru/transnistria/music-books-art/musical-instruments/miscellaneous">Прочее</a></li>
+                            </ul></li>
+                    </ul>
+                </div>
+                <div class="col23">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/music-books-art/repair-of-musical-instruments">Ремонт и настройка инструментов</a></li>
+                        <li><a href="/ru/transnistria/music-books-art/rent-of-musical-instruments">Прокат инструментов</a></li>
+                        <li><a href="/ru/transnistria/music-books-art/cd-and-disks">Диски и пластинки</a></li>
+                        <li><a href="/ru/transnistria/furniture-and-interior/all-for-the-comfort/antiques-and-work-of-art" title="Это ссылка на рубрику &quot;Антиквариат, предметы искусства, часы&quot; в разделе &quot;Мебель и интерьер&quot;">Антиквариат, произведения искусства, часы
+                            <div class="label-ascii-arrow">
+                                &nbsp;→
+                            </div></a></li>
+                        <li><a href="/ru/transnistria/music-books-art/books">Книги</a></li>
+                        <li><a href="/ru/transnistria/music-books-art/visual-arts">Изобразительное искусство</a></li>
+                    </ul>
+                </div>
+                <div class="col33">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/music-books-art/miscellaneous">Прочее</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="tub"><a href="/ru/transnistria/informational-messages">Информационные сообщения</a></h2>
+            <div class="main clrfix">
+                <div class="col13">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/informational-messages/subpoena">Повестка в суд</a></li>
+                        <li><a href="/ru/transnistria/informational-messages/overrule">Считать недействительным</a></li>
+                    </ul>
+                </div>
+                <div class="col23">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/informational-messages/lost-and-found-office">Утеряно/Найдено</a></li>
+                        <li><a href="/ru/transnistria/informational-messages/need-help">Требуется помощь</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="tub"><a href="/ru/transnistria/odds-and-ends-exchange-and-buy">Прочее</a></h2>
+            <div class="main clrfix">
+                <div class="col13">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/odds-and-ends-exchange-and-buy/food-beverage-and-packaging">Продукты, напитки и упаковка</a>
+                            <ul class="sub">
+                                <li><a href="/ru/transnistria/odds-and-ends-exchange-and-buy/food-beverage-and-packaging/food-and-beverage">Продукты питания, напитки</a></li>
+                                <li><a href="/ru/transnistria/odds-and-ends-exchange-and-buy/food-beverage-and-packaging/packaging">Тара и упаковка</a></li>
+                                <li><a href="/ru/transnistria/sport-and-leisure/sporting-accessories/sports-nutrition" title="Это ссылка на рубрику &quot;Спортивное и диетическое питание&quot; в разделе &quot;Туризм, спорт и отдых&quot;">Спортивное и диетическое питание
+                                    <div class="label-ascii-arrow">
+                                        &nbsp;→
+                                    </div></a></li>
+                                <li><a href="/ru/transnistria/odds-and-ends-exchange-and-buy/food-beverage-and-packaging/different">Прочее</a></li>
+                            </ul></li>
+                    </ul>
+                </div>
+                <div class="col23">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/odds-and-ends-exchange-and-buy/buy-different">Куплю разное</a></li>
+                        <li><a href="/ru/transnistria/odds-and-ends-exchange-and-buy/bad-for-worse">Шило на мыло (меняю)</a></li>
+                        <li><a href="/ru/transnistria/odds-and-ends-exchange-and-buy/perfumes-and-cosmetics">Парфюмерия и косметика</a></li>
+                        <li><a href="/ru/transnistria/odds-and-ends-exchange-and-buy/stationery">Канцтовары</a></li>
+                    </ul>
+                </div>
+                <div class="col33">
+                    <ul class="rub">
+                        <li><a href="/ru/transnistria/odds-and-ends-exchange-and-buy/medical-supplies">Медицинские товары</a></li>
+                        <li><a href="/ru/transnistria/odds-and-ends-exchange-and-buy/temp-other-categories">Прочее</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+        <div class="fSocialWrapper">
+            <div class="fSocial canvas">
+                <div class="fNew"><span>Экспресс-подача объявлений:</span> <a title="Viber" href="viber://chat?number=+37376700300" class="vibeLink"></a> <a title="Telegram" href="tg://resolve?domain=@Maklermd" class="telegramLink"></a>
+                </div>
+                <div class="fFoc"><span>Мы в соцсетях:</span> <a href="https://www.facebook.com/Makler.md" target="_blank" class="fb-round"></a> <a href="https://ok.ru/makler.md" target="_blank" class="ok-round"></a> <a href="https://vk.com/maklermd" target="_blank" class="vk-round"></a>
+                </div>
+                <div class="fCounter"><!-- Yandex.Metrika informer --> <a href="https://metrika.yandex.ru/stat/?id=20849017&amp;from=informer" target="_blank" rel="nofollow" class="fMetric"><img src="https://informer.yandex.ru/informer/20849017/3_0_FFFFFFFF_EFEFEFFF_0_pageviews" style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="20849017" data-lang="ru"></a> <!-- /Yandex.Metrika informer -->
+                </div>
+            </div>
+        </div>
+        <div class="fMain canvas">
+            <div class="fFirst">
+                <p class="fTitle">Для размещения рекламы:</p> <noindex>
+                <p>Кишинев 373 22 835-035</p>
+            </noindex> <noindex>
+                <p>Бельцы 373 231 2-23-05</p>
+            </noindex> <noindex>
+                <p>Тирасполь 373 533 5-28-05</p>
+            </noindex> <a href="/cdn-cgi/l/email-protection#5b2c3e391b363a30373e2975363f" target="_top"><span class="__cf_email__" data-cfemail="8ff8eaedcfe2eee4e3eafda1e2eb">[email&nbsp;protected]</span></a>
+            </div>
+            <div class="fSecond">
+                <p class="fTitle">Техподдержка:</p> <noindex>
+                <p>Кишинев 373 68 102-202</p>
+            </noindex> <noindex>
+                <p>Бельцы 373 231 2-24-62</p>
+            </noindex> <noindex>
+                <p>Тирасполь 373 533 5-28-05</p>
+            </noindex> <a href="/cdn-cgi/l/email-protection#295a5c5959465b5d69444842454c5b07444d" target="_top"><span class="__cf_email__" data-cfemail="e794929797889593a78a868c8b8295c98a83">[email&nbsp;protected]</span></a>
+            </div>
+            <div class="fThird">
+                <p class="fTitle">Наши приложения:</p> <a href="https://apps.apple.com/us/app/makler-md/id1370408572" target="_blank" class="appIcon"></a> <a href="https://play.google.com/store/apps/details?id=com.makler&amp;hl=ru" target="_blank" class="googleIcon"></a>
+            </div>
+            <div class="fFourth"><a href="/ru/help/aboutus/">О компании</a> <a href="/ru/help/contacts/">Контакты</a> <a href="/ru/help/advertising/">Реклама на сайте</a> <a href="/ru/help/payment_terms/">Условия и правила</a> <a href="/ru/help/">Помощь</a>
+            </div>
+        </div>
+        <div class="fService canvas">
+            <p>© ООО «Makler», 1991 – 2022</p>
+        </div>
+    </footer>
+</div> <!-- site content } --> <!-- AUX elements { -->
+<div id="load-indicator">
+    Загрузка...
+</div>
+<div id="ssContainer" style="display: none;"></div>
+<div id="qtip-display-area-wrapper">
+    <div id="qtip-display-area" class="canvas"></div>
+</div>
+<div id="ajax-dialog" class="popupBg" style="display: none;"></div>
+<div id="dialog_box" style="display: none;"></div> <!-- AUX elements } -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script type="text/javascript" src="/vendors/jquery/plugins/jquery.unveil.js?2667d"></script>
+<script type="text/javascript" src="/vendors/jquery/plugins/jquery.plugins.min.js?2667d"></script>
+<script type="text/javascript" src="/vendors/dklab_realplexor/dklab_realplexor.js?2667d"></script>
+<script type="text/javascript" src="/d/js/common.js?2667d"></script>
+<script type="text/javascript" async src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/i18n/jquery.ui.datepicker-ru.min.js"></script>
+<script type="text/javascript" src="/vendors/jquery/ui/jquery-ui.min.js?2667d"></script>
+<script type="text/javascript" src="/vendors/fancybox2/jquery.fancybox.min.js?2667d"></script>
+<script type="text/javascript" src="/d/js/third-side-tracking.js?2667d"></script>
+<script type="text/javascript" src="/d/js/user-register.js?2667d"></script>
+<script type="application/javascript">var OA_zones = {'zone_1_1' : 62151, 'zone_4_1' : 62152, 'zone_31_1' : 62153, 'zone_32_1' : 62154, 'zone_left' : 62146};</script>
+<script type="application/javascript">
+    var OA_spc = ""
+    if (typeof(OA_zones) !== "undefined") {
+        var OA_zoneids = "";
+        var zonename
+        for (zonename in OA_zones) OA_zoneids += encodeURI(zonename+"=" + OA_zones[zonename] + "|");
+        OA_zoneids += "&amp;nz=1";
+    } else {
+        var OA_zoneids = encodeURI("");
+    }
+    if (typeof(OA_source) == "undefined") { OA_source = ""; }
+    var OA_p="https://revive.makler.md/www/delivery/spc.php";
+    var OA_r=Math.floor(Math.random()*99999999); OA_output = new Array();
+    var OA_spc="<"+"script type='text/javascript' ";
+    OA_spc+="src='"+OA_p+"?zones="+OA_zoneids;
+    OA_spc+="&amp;source="+encodeURI(OA_source)+"&amp;r="+OA_r;
+    OA_spc+="&amp;block=1&amp;blockcampaign=1&amp;target=_blank&amp;charset=UTF-8";
+    if (window.location) OA_spc+="&amp;loc="+encodeURI(window.location);
+    if (document.referrer) OA_spc+="&amp;referer="+encodeURI(document.referrer);
+    OA_spc+="'><"+"/script>";
+    document.write(OA_spc);
+    function OA_show(name) {
+        if (typeof(OA_output[name]) == "undefined") { return; } else { document.write(OA_output[name]);}
+    }</script>
+<script type="text/javascript">
+
+    $is_mobile = false;
+
+    function show_ad($id) {
+        if($is_mobile)
+            return false;
+
+        if ('undefined' !== typeof (OA_output) && typeof (OA_output[$id]) != 'undefined' && OA_output[$id] !== '') {
+
+            var flashCode,
+                oDIV = document.getElementById('openx-'+$id);
+
+            if (oDIV) {
+
+                // if it's a flash banner..
+                if(OA_output[$id].indexOf("ox_swf.write")!=-1) {
+
+                    // extract javascript code
+                    var pre_code_wrap = "<script type='text/javascript'><!--// <![CDATA[",
+                        post_code_wrap = "// ]]> -->";
+
+                    flashCode = OA_output[$id].substr(OA_output[$id].indexOf(pre_code_wrap)+pre_code_wrap.length);
+                    flashCode = flashCode.substr(0, flashCode.indexOf(post_code_wrap));
+
+                    // replace destination for the SWFObject
+                    flashCode = flashCode.replace(/ox\_swf\.write\(\'(.*)'\)/, "ox_swf.write('"+ oDIV.id +"')");
+                    flashCode = flashCode.replace(/document.write/, "$('#"+ oDIV.id +"').append");
+
+                    // insert SWFObject
+                    if( flashCode.indexOf("ox_swf.write")!=-1 ) {
+                        eval(flashCode);
+                    }// else: the code was not as expected; don't show it
+                }else{
+                    // normal image banner; just set the contents of the DIV
+
+                    var oldWrite = document.write;
+                    var wHtml="";
+                    document.write=function(str) {wHtml+=str;};
+
+                    $('#openx-'+$id).append(OA_output[$id]);
+                    // optionally reset
+                    document.write = oldWrite;
+                    //oDIV.innerHTML = OA_output[$id];
+                }
+            }
+        }
+    }
+
+
+</script>
+<div id="mvl_zero" style="display: none; z-index: 256;" data-title="Нет объявлений">
+    <div class="box-wrp">
+        <p align="center">В выбранном вами регионе не размещались объявления. Выберите пожалуйста другой регион.</p>
+    </div>
+    <div class="box-wrp2">
+        <div class="buttons"><a href="javascript:void(null);" class="go psGo_seen blue">OK</a> <a href="javascript:void(null);" class="cancel red">Отмена</a>
+        </div>
+    </div>
+</div>
+<div id="pmr_user" style="display: none; z-index: 256;" data-title="Пользователь из Приднестровья">
+    <div class="box-wrp">
+        <p align="center">Вы зашли с приднестровского IP. Выберите регион</p>
+    </div>
+    <div class="box-wrp2">
+        <div class="buttons"><a href="javascript:void(null);" data-type="region" data-rel="3" class="select_region blue">Приднестровье</a> <a href="javascript:void(null);" data-type="region" data-rel="mssr" class="select_region blue">Молдова</a>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        var $dialog = $("#pmr_user");
+        $dialog.dialog({
+            closeText: '',
+            title: $dialog.data('title'),
+            dialogClass: "new-style message blue",
+            width: 430,
+            minHeight: 100,
+            modal: true,
+            resizable: false
+        });
+
+        $dialog.dialog('widget').focus(); // not IE
+        $dialog.focus(); // IE
+
+        $('.remain_pmr, .checkout_mssr').click(function () {
+            selectRegion();
+        });
+    });
+</script> <!-- BEGIN JIVOSITE CODE
+{literal}
+-->
+<script type="text/javascript">
+    (function(){ var widget_id = 'gX5nPVhA4W';var d=document;var w=window;function l()
+    { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}
+        if(d.readyState=='complete')
+        {l();}
+        else{if(w.attachEvent)
+        {w.attachEvent('onload',l);}
+        else
+        {w.addEventListener('load',l,false);}
+        }})();</script> <!--
+{/literal}
+END JIVOSITE CODE -->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 869272218;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+</script>
+<div style="display: none;">
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+</div>
+<noscript>
+    <div style="display:inline;"><img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/869272218/?guid=ON&amp;script=0">
+    </div>
+</noscript>
+<script type="text/javascript">
+    $(document).ready(function () {
+    });
+</script> <!--<img src="/layouts/default/img/tote/floatingBanner.png" alt="EURO2106 pe makler.md">--> <!--<div id="tote_floatingBann" class="floatingBann" style="display: none">
+		<a href="//fifa2018" id="tote_floatingBannLink">
+			<div class="fifaFloat">
+				<h3></h3>
+				<p></p>
+			</div>
+
+			<span class="btn_solid btn_blue btn_40">
+							</span>
+		</a>
+		<span id="tote_floatingBannClose" class="floatingBannClose"></span>
+	</div>--> <!--	Голосовалка --> <!--<div id="tote_floatingBann" class="floatingBann" style="display: none">
+		<p class="voteText"></p>
+					<a href="https://yandex.ru/poll/enter/MX2XmSWxgmqkuePKx7nMt9" target="_blank" class="voteButton" id="tote_floatingBannLink"></a>
+					<a href="https://yandex.ru/poll/enter/MX2XmSWxgmqkuePKx7nMt9" target="_blank" class="voteButton" id="tote_floatingBannLink"></a>
+
+		<span id="tote_floatingBannClose" class="floatingBannClose"></span>
+	</div>--> <!--	/Голосовалка --> <!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter20849017 = new Ya.Metrika2({
+                    id:20849017,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks2");
+</script>
+<noscript>
+    <div>
+        <img src="https://mc.yandex.ru/watch/20849017" style="position:absolute; left:-9999px;" alt="">
+    </div>
+</noscript> <!-- /Yandex.Metrika counter -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "WebSite",
+        "url": "https://makler.md/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://makler.md/ru/transnistria/an/search/?query={query}",
+            "query-input": "required name=query"
+        }
+    }
+</script> <!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window,document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1039528402834822');
+    fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" src="https://www.facebook.com/tr?id=1039528402834822&amp;ev=PageView
+&amp;noscript=1">
+</noscript> <!-- End Facebook Pixel Code --> <!-- (C)2000-2019 Gemius SA - gemiusPrism  / Makler.md/Other pages -->
+<script type="text/javascript">
+    <!--//--><![CDATA[//><!--
+    var pp_gemius_identifier = 'zDE7K3R7FN.wdqpdde.xU8eC.K38veSh06UV.wd_k2b.n7';
+    // lines below shouldn't be edited
+    function gemius_pending(i) { window[i] = window[i] || function() {var x = window[i+'_pdata'] = window[i+'_pdata'] || []; x[x.length]=arguments;};};gemius_pending('gemius_hit'); gemius_pending('gemius_event'); gemius_pending('pp_gemius_hit'); gemius_pending('pp_gemius_event');(function(d,t) {try {var gt=d.createElement(t),s=d.getElementsByTagName(t)[0],l='http'+((location.protocol=='https:')?'s':''); gt.setAttribute('async','async');gt.setAttribute('defer','defer'); gt.src=l+'://gamd.hit.gemius.pl/xgemius.js'; s.parentNode.insertBefore(gt,s);} catch (e) {}})(document,'script');
+    //--><!]]>
+</script>
+</body>
+</html>

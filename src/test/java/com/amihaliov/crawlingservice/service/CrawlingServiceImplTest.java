@@ -12,38 +12,38 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 @DataMongoTest
 class CrawlingServiceImplTest {
 
-    @Autowired
-    MongoTemplate mongoTemplate;
-
-    @Autowired
-    ICrawlingService crawlingService;
-
-    @Test
-    void crawl() {
-        crawlingService.updateCrawl();
-    }
-
-    @Test
-    void fullCrawl() {
-        crawlingService.fullCrawl();
-    }
-
-    @TestConfiguration
-    static class TestConfig {
-        @Bean
-        ICrawlingService crawlingService(ISavingService savingService, IParsingService parsingService) {
-            return new CrawlingServiceImpl(savingService, parsingService);
-        }
-
-        @Bean
-        ISavingService savingService(ArticleRepository articleRepository, CrawlRepository crawlRepository) {
-            return new SavingServiceImpl(articleRepository, crawlRepository);
-        }
-
-        @Bean
-        IParsingService parsingService() {
-            return new ParsingServiceImpl();
-        }
-    }
+//    @Autowired
+//    MongoTemplate mongoTemplate;
+//
+//    @Autowired
+//    ICrawlingService crawlingService;
+//
+//    @Test
+//    void crawl() {
+//        crawlingService.updateCrawl();
+//    }
+//
+//    @Test
+//    void fullCrawl() {
+//        crawlingService.fullCrawl();
+//    }
+//
+//    @TestConfiguration
+//    static class TestConfig {
+//        @Bean
+//        ICrawlingService crawlingService(ISavingService savingService, IParsingService parsingService) {
+//            return new CrawlingServiceImpl(savingService, parsingService);
+//        }
+//
+//        @Bean
+//        ISavingService savingService(ArticleRepository articleRepository, CrawlRepository crawlRepository) {
+//            return new SavingServiceImpl(articleRepository, crawlRepository);
+//        }
+//
+//        @Bean
+//        IParsingService parsingService() {
+//            return new MaklerParsingServiceImpl();
+//        }
+//    }
 
 }

@@ -19,7 +19,7 @@ public class CrawlingController {
     @PostMapping("/update")
     ResponseEntity<Object> updateCrawl() {
         try {
-            crawlingService.updateCrawl();
+//            crawlingService.updateCrawl();
             return ResponseEntity.ok().build();
         } catch (Exception e) {
             log.error("Error Update Crawling", e);
@@ -30,7 +30,7 @@ public class CrawlingController {
     @PostMapping("/full")
     ResponseEntity<Object> fullCrawl() {
         try {
-            crawlingService.fullCrawl();
+//            crawlingService.fullCrawl();
             return ResponseEntity.ok().build();
         } catch (Exception e) {
             log.error("Error Update Crawling", e);
