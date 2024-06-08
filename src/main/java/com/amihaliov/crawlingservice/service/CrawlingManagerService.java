@@ -1,12 +1,12 @@
 package com.amihaliov.crawlingservice.service;
 
 import com.amihaliov.crawlingservice.entity.Category;
-import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -15,23 +15,31 @@ public class CrawlingManagerService implements ICrawlingManagerService {
 
     private final ICategoryService categoryService;
 
-    private List<Category> categories;
+    private final ISavingService savingService;
 
-    @PostConstruct
-    public void setUp() {
-        List<Category> allCategories = categoryService.findAllCategories();
-        categories = allCategories.stream()
-                .filter(c -> StringUtils.equals(c.getName(), "Легковые автомобили"))
+    @Override
+    public List<Category> getCategoriesToCrawl() {
+        return categoryService.findAllCategories().stream()
+                .filter(Category::isEnabled)
                 .collect(Collectors.toList());
     }
 
     @Override
-    public List<Category> getCategoriesToCrawl() {
-        return categories;
-    }
+    public List<Category> enableCategoriesForCrawling(Set<String> categoryUrls) {
+        List<Category> mainCategories = categoryService.findMainCategories();
+        for (Category mainCategory : mainCategories) {
+            mainCategory.setEnabled(categoryUrls.contains(mainCategory.getUrl()));
 
-    @Override
-    public void setCategoriesToCrawl(List<Category> categories) {
-        this.categories = categories;
+            List<Category> subcategories = mainCategory.getSubcategories();
+            if (!CollectionUtils.isEmpty(subcategories)) {
+                for (Category subcategory : subcategories) {
+                    subcategory.setEnabled(categoryUrls.contains(subcategory.getUrl()));
+                }
+            }
+        }
+
+        savingService.saveCategories(mainCategories);
+
+        return mainCategories;
     }
 }

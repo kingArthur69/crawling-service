@@ -14,6 +14,10 @@ import java.util.List;
 @Repository
 public interface ArticleRepository extends MongoRepository<Article, String> {
 
+    Page<Article> findAllByUrlStartsWith(String url, TextCriteria textCriteria, Pageable pageable);
+
+    Page<Article> findByUrlStartsWith(String url, Pageable pageable);
+
     Page<Article> findAllBy(TextCriteria textCriteria, Pageable pageable);
 
     //    @Query(fields = "{ 'id' : 1 }")

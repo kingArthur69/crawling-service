@@ -14,4 +14,5 @@ public interface ISavingService {
 
     void save(ParsingResult result);
 
+    void saveCategories(List<Category> categories);
 }

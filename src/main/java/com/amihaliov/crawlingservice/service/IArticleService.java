@@ -13,4 +13,6 @@ public interface IArticleService {
     List<Article> getNewArticles();
 
     Page<Article> getArticlesPageByText(String text, Pageable pageable);
+
+    Page<Article> getArticlePageByUrlsStartingAndTextCriteria(String url, String text, Pageable pageable);
 }
