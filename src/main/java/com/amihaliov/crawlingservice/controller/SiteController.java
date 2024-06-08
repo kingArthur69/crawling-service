@@ -12,9 +12,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -48,10 +51,8 @@ public class SiteController {
 
     @GetMapping("/crawling/categories")
     String viewCrawlingCategoriesPage(Model model) {
-        List<Category> categoriesToCrawl = crawlingManagerService.getCategoriesToCrawl();
         List<Category> mainCategories = categoryService.findMainCategories();
-        model.addAttribute("categoriesToCrawl", categoriesToCrawl);
-        model.addAttribute("mainCategories", categoriesToCrawl);
+        model.addAttribute("mainCategories", mainCategories);
         return "categories";
     }
 
@@ -85,23 +86,23 @@ public class SiteController {
             @RequestParam(name = "order", defaultValue = "lastUpdateTime") String property,
             @RequestParam(name = "direction", defaultValue = "desc") String direction,
             @RequestParam(name = "text", defaultValue = "") String text,
+            @RequestParam(name = "categoryUrl", required = false) String categoryUrl,
             Model model
     ) {
         try {
             Sort sortBy = Sort.by(Sort.Direction.fromString(direction), property);
             Pageable pageable = PageRequest.of(page, count, sortBy);
             String trimmedText = StringUtils.trim(text);
-            int length = StringUtils.length(trimmedText);
 
-            Page<Article> articlesPage = length > 2 && length < 25
-                    ? articleService.getArticlesPageByText(trimmedText, pageable)
-                    : articleService.getArticlesPage(pageable);
+            Page<Article> articlesPage = articleService.getArticlePageByUrlsStartingAndTextCriteria(categoryUrl, trimmedText, pageable);
 
             model.addAttribute("articles", articlesPage.getContent());
             model.addAttribute("currentPage", page);
             model.addAttribute("pages", articlesPage.getTotalPages());
             model.addAttribute("elements", articlesPage.getTotalElements());
             model.addAttribute("text", text);
+            model.addAttribute("categoryUrl", categoryUrl);
+            model.addAttribute("categories", categoryService.findAllCategories());
             return "articles";
         } catch (Exception e) {
             log.error("Error while getting Articles", e);
@@ -117,6 +118,20 @@ public class SiteController {
             return "newArticles";
         } catch (Exception e) {
             log.error("Error while getting Articles", e);
+            return "error";
+        }
+    }
+
+    @PostMapping(path = "/category", consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
+    String updateCategories(@RequestParam MultiValueMap<String, String> params, Model model) {
+        try {
+            List<Category> updatedCategories = crawlingManagerService.enableCategoriesForCrawling(params.keySet());
+
+            model.addAttribute("mainCategories", updatedCategories);
+
+            return "categories";
+        } catch (Exception e) {
+            log.error("Error while updating Categories", e);
             return "error";
         }
     }

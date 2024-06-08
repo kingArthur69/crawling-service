@@ -1,9 +1,6 @@
 package com.amihaliov.crawlingservice.service;
 
-import com.amihaliov.crawlingservice.entity.Article;
-import com.amihaliov.crawlingservice.entity.Crawl;
-import com.amihaliov.crawlingservice.entity.ParsingResult;
-import com.amihaliov.crawlingservice.entity.Price;
+import com.amihaliov.crawlingservice.entity.*;
 import com.amihaliov.crawlingservice.repository.ArticleRepository;
 import com.amihaliov.crawlingservice.repository.CategoryRepository;
 import com.amihaliov.crawlingservice.repository.CrawlRepository;
@@ -104,5 +101,10 @@ public class SavingServiceImpl implements ISavingService {
         if (result.getCategories() != null) {
             categoryRepository.saveAll(result.getCategories());
         }
+    }
+
+    @Override
+    public void saveCategories(List<Category> categories) {
+        categoryRepository.saveAll(categories);
     }
 }

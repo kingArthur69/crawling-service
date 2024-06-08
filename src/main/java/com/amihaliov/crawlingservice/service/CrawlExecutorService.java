@@ -60,6 +60,7 @@ public class CrawlExecutorService implements ICrawlExecutorService {
 
                 crawl.setPagesCrawled(count);
                 crawl.setArticlesCrawled(crawl.getArticlesCrawled() + articleSize);
+                savingService.save(crawl);
 
                 if (StringUtils.isNotBlank(result.getNextPageUrl())) {
                     url = result.getNextPageUrl();

@@ -1,6 +1,5 @@
 package com.amihaliov.crawlingservice.entity;
 
-import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -19,4 +18,6 @@ public class Category {
     String name;
 
     List<Category> subcategories;
+
+    boolean enabled;
 }
