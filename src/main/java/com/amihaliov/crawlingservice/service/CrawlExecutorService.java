@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.nodes.Document;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -21,8 +22,12 @@ import java.util.concurrent.TimeUnit;
 public class CrawlExecutorService implements ICrawlExecutorService {
 
     private static final ExecutorService EXECUTOR_SERVICE = Executors.newFixedThreadPool(4);
-    private static final long PAGE_CRAWL_DELAY_MIN = 7L;
-    private static final long PAGE_CRAWL_DELAY_MAX = 15L;
+
+    @Value("${pageCrawlDelaySecondsMin}")
+    private long PAGE_CRAWL_DELAY_MIN;
+
+    @Value("${pageCrawlDelaySecondsMax}")
+    private long PAGE_CRAWL_DELAY_MAX;
 
     private final ICrawlingService crawlingService;
     private final IParsingService parsingService;

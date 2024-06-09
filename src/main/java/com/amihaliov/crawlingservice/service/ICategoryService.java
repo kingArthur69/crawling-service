@@ -10,5 +10,4 @@ public interface ICategoryService {
 
     List<Category> findMainCategories();
 
-    List<Category> findByNameAndMarketplace(String name, String marketplace);
 }

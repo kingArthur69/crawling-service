@@ -11,7 +11,7 @@ import java.util.Map;
 @Service
 public class ParserResolvingServiceImpl implements IParserResolvingService {
 
-    private final Map<String, IParsersFactory> map = Map.of("makler.md", new MaklerParsersFactory());
+    private static final Map<String, IParsersFactory> FACTORY_MAP = Map.of("makler.md", new MaklerParsersFactory());
 
     public IParser getParser(String link) {
 
@@ -23,7 +23,7 @@ public class ParserResolvingServiceImpl implements IParserResolvingService {
     private IParsersFactory getFactory(String link) {
         IParsersFactory factory;
         if (StringUtils.contains(link, "makler.md")) {
-            factory = map.get("makler.md");
+            factory = FACTORY_MAP.get("makler.md");
         } else {
             throw new IllegalArgumentException("Site is not supported: " + link);
         }

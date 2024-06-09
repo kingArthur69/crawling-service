@@ -20,7 +20,6 @@ public interface ArticleRepository extends MongoRepository<Article, String> {
 
     Page<Article> findAllBy(TextCriteria textCriteria, Pageable pageable);
 
-    //    @Query(fields = "{ 'id' : 1 }")
     Collection<Article> findDistinctAllByIdIn(Collection<String> ids);
 
     List<Article> findByUpdateTimeStampNullAndLastUpdateTimeAfterAndCreateTimeStampAfter(

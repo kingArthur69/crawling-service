@@ -5,7 +5,6 @@ import com.amihaliov.crawlingservice.entity.ParsingResult;
 import com.amihaliov.crawlingservice.parser.IParser;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -16,7 +15,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@Disabled
 class MaklerListingParserImpl_CrawledDocument_Test {
 
     private static final Path PATH = Path.of(Path.of("").toAbsolutePath().toString(),
@@ -38,19 +36,19 @@ class MaklerListingParserImpl_CrawledDocument_Test {
                 () -> assertEquals("373-77-792300", article.getPhone()),
                 () -> assertEquals("Продам компьютер", article.getTitle()),
                 () -> assertEquals("1 400 руб", article.getCurrentPrice().getValue()),
-                () -> assertEquals(LocalDateTime.of(2023,5,21,12,39), article.getLastUpdateTime())
+                () -> assertEquals(LocalDateTime.of(2024,5,21,12,39), article.getLastUpdateTime())
         );
 
         Article article2 = articles.get(1);
         assertAll(
                 () -> assertEquals("/ru/computers-and-office-equipment/tablets/an/17382", article2.getId()),
                 () -> assertEquals("https://makler.md/ru/computers-and-office-equipment/tablets/an/17382", article2.getUrl()),
-                () -> assertEquals("https://media.makler.md//layouts/default/img/photo_placeholder_120x90.png", article2.getImgUrl()),
-                () -> assertEquals("Скейтборды Penny с прорезом для руки новая модель-390 лей. алюминиевая подвеска, колеса ПУ, светящиеся колеса, подшипник ABEC-7,", article2.getDescription()),
+                () -> assertEquals("https://media.makler.md/production/an/thumb/000/058/454/000058454104.jpg", article2.getImgUrl()),
+                () -> assertEquals("Айпад 8 новый, не распечатанный. ", article2.getDescription()),
                 () -> assertEquals("373-77-771923", article2.getPhone()),
                 () -> assertEquals("Айпад 8, новый", article2.getTitle()),
                 () -> assertEquals("290 $", article2.getCurrentPrice().getValue()),
-                () -> assertEquals(LocalDateTime.of(2023,5,21,12,39), article2.getLastUpdateTime())
+                () -> assertEquals(LocalDateTime.of(2024,5,21,12,39), article2.getLastUpdateTime())
         );
     }
 }
