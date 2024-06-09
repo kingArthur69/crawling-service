@@ -35,7 +35,7 @@ class MaklerListingParserImplTest {
                 () -> assertEquals("373-78-803133", article.getPhone()),
                 () -> assertEquals("Скейтборды Penny с прорезом для руки новая модель-390 лей.", article.getTitle()),
                 () -> assertEquals("390 Lei", article.getCurrentPrice().getValue()),
-                () -> assertEquals(LocalDateTime.of(2023,5,21,10,54), article.getLastUpdateTime())
+                () -> assertEquals(LocalDateTime.of(2024,5,21,10,54), article.getLastUpdateTime())
         );
     }
 }

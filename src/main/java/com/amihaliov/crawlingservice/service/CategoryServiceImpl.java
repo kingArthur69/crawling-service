@@ -31,8 +31,4 @@ public class CategoryServiceImpl implements ICategoryService {
         return categoryRepository.findAll();
     }
 
-    @Override
-    public List<Category> findByNameAndMarketplace(String name, String marketplace) {
-        return categoryRepository.findAllByNameAndMarketplace(name, marketplace);
-    }
 }

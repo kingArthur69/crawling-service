@@ -11,11 +11,12 @@
 <body>
 <div class="container my-2" align="center">
     <h3>Crawling Service - Crawling</h3>
-    <a th:href="@{/}" class="btn btn-success btn-danger text-white  mb-3">Back</a>
-    <a th:href="@{/crawling/update}" class="btn btn-info text-white  mb-3">Update Crawl</a>
-    <a th:href="@{/crawling/full}" class="btn btn-warning mb-3">Full Crawl</a>
-    <a th:href="@{/crawling/list}" class="btn btn-success text-white mb-3">Refresh Crawls List</a>
-    <a th:href="@{/crawling/categories}" class="btn btn-info text-white mb-3">Categories</a>
+    <a href="/" class="btn btn-success btn-danger text-white  mb-3">Back</a>
+    <a href="/crawling/update" class="btn btn-info text-white  mb-3">Update Crawl</a>
+    <a href="/crawling/full" class="btn btn-warning mb-3">Full Crawl</a>
+    <a href="/crawling/main" class="btn btn-warning mb-3">Main Page Crawl</a>
+    <a href="/crawling/list" class="btn btn-success text-white mb-3">Refresh Crawls List</a>
+    <a href="/crawling/categories" class="btn btn-info text-white mb-3">Categories</a>
 
     <table style="width:80%" border="1"
            class = "table table-striped table-responsive-md">
@@ -37,7 +38,7 @@
             <td th:text="${crawl.articlesCrawled}"></td>
             <td th:text="${crawl.status}"></td>
             <td >
-                <a th:href="${crawl.url}" text="Url">Url</a>
+                <a th:href="${crawl.url}">Url</a>
             </td>
         </tr>
         </tbody>

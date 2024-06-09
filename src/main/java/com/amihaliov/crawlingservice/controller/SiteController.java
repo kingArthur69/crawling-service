@@ -136,4 +136,9 @@ public class SiteController {
         }
     }
 
+    @GetMapping("/crawling/main")
+    String triggerMainPageCrawl() {
+        crawlExecutorService.submit("https://makler.md/ru/categories");
+        return "redirect:/crawling";
+    }
 }
