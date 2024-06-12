@@ -16,6 +16,7 @@ public class MaklerMainParserImpl implements IParser {
     private static final String MAIN_CATEGORY_SELECTOR = "div.map h2 a";
     private static final String ALL_CATEGORY_SELECTOR = "div.map a";
     private static final String URL_PREFIX = "https://makler.md";
+    private static final String REFERENCE_CATEGORY_SELECTOR = "div.label-ascii-arrow";
 
     @Override
     public ParsingResult parse(Document document) {
@@ -30,11 +31,18 @@ public class MaklerMainParserImpl implements IParser {
 
         Elements allCategories = document.select(ALL_CATEGORY_SELECTOR);
 
-        if (allCategories.get(0) != null && !categoryMap.isEmpty()) {
-            Category mainCategory = categoryMap.get(parseCategory(allCategories.get(0)).getUrl());
+        Element firstMainCategory = allCategories.get(0);
+        if (firstMainCategory != null && !categoryMap.isEmpty()) {
+            Category mainCategory = categoryMap.get(parseCategory(firstMainCategory).getUrl());
 
             for (int i = 1; i < allCategories.size(); i++) {
-                Category subCategory = parseCategory(allCategories.get(i));
+                Element categoryElement = allCategories.get(i);
+
+                if(categoryElement.selectFirst(REFERENCE_CATEGORY_SELECTOR) != null) {
+                    continue;
+                }
+
+                Category subCategory = parseCategory(categoryElement);
                 String url = subCategory.getUrl();
                 if (categoryMap.containsKey(url)) {
                     mainCategory = categoryMap.get(url);
