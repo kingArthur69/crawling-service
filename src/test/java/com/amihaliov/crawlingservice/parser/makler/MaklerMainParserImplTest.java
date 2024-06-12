@@ -1,5 +1,6 @@
 package com.amihaliov.crawlingservice.parser.makler;
 
+import com.amihaliov.crawlingservice.entity.Category;
 import com.amihaliov.crawlingservice.entity.ParsingResult;
 import com.amihaliov.crawlingservice.parser.IParser;
 import org.jsoup.Jsoup;
@@ -8,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -22,6 +23,10 @@ class MaklerMainParserImplTest {
     void parse() throws IOException {
         Document document = Jsoup.parse(PATH.toFile());
         ParsingResult result = PARSER.parse(document);
-        assertEquals(23, result.getCategories().size());
+        List<Category> categories = result.getCategories();
+        assertEquals(23, categories.size());
+        Category category = categories.get(1);
+        assertEquals("Все для детей", category.getName());
+        assertEquals(6, category.getSubcategories().size());
     }
 }
