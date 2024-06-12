@@ -80,9 +80,13 @@ public class MaklerListingParserImpl implements IParser {
 
     private LocalDateTime parseLastUpdateTime(Element element) {
         String timeText = ParserUtils.getText(element, "div.ls-detail_controlsBlock div.ls-detail_time").toLowerCase();
-        LocalDateTime time = LocalDateTime.parse(timeText, FORMATTER);
+        if(StringUtils.isNotBlank(timeText)) {
+            LocalDateTime time = LocalDateTime.parse(timeText, FORMATTER);
 
-        return time.isAfter(LocalDateTime.now()) ? time.minusYears(1L) : time;
+            return time.isAfter(LocalDateTime.now()) ? time.minusYears(1L) : time;
+        } else {
+            return LocalDateTime.now().withSecond(0).withNano(0);
+        }
     }
 
     private String getNextPageUrl(Document document) {
