@@ -22,7 +22,7 @@
         <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
         <sonar.language>java</sonar.language>
         <sonar.token>sqa_777e6e3ae4f6903223c6f46c27063f4052248033</sonar.token>
-        <sonar.core.serverBaseURL>http://host.docker.internal:9000</sonar.core.serverBaseURL>
+        <sonar.core.serverBaseURL>http://172.17.0.1:9000</sonar.core.serverBaseURL>
     </properties>
     <dependencies>
         <dependency>
