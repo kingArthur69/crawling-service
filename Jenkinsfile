@@ -21,7 +21,7 @@ pipeline {
                 script {
                    scannerHome = tool 'Sonar Local'
                 }
-                withSonarQubeEnv() {
+                withSonarQubeEnv('Sonar Local') {
                     sh 'mvn sonar:sonar'
                 }
 
