@@ -18,7 +18,13 @@ pipeline {
         }
         stage('SonarQube scan') {
             steps {
-                sh 'mvn sonar:sonar'
+                script {
+                   scannerHome = tool 'Sonar Local'
+                }
+                withSonarQubeEnv() {
+                    sh 'mvn sonar:sonar'
+                }
+
             }
         }
         stage('SonarQube check') {
