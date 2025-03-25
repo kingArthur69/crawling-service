@@ -21,7 +21,7 @@ pipeline {
                 sh 'mvn sonar:sonar'
             }
         }
-        stage('SonarQube scan') {
+        stage('SonarQube check') {
              steps {
                 timeout(time: 3, unit: 'MINUTES') {
                 waitForQualityGate abortPipeline: true
