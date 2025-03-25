@@ -19,7 +19,7 @@ pipeline {
         stage('SonarQube scan') {
             steps {
                 script {
-                   scannerHome = tool 'Sonar Local'
+                   scannerHome = tool 'SonarScanner'
                 }
                 withSonarQubeEnv('Sonar Local') {
                     sh 'mvn sonar:sonar'
