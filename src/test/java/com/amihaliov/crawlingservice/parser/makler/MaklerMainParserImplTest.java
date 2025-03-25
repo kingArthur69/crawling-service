@@ -11,12 +11,11 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MaklerMainParserImplTest {
 
-    private static final Path PATH = Path.of(Path.of("").toAbsolutePath().toString(),
-            "src\\test\\resources\\com\\amihaliov\\crawlingservice\\parser\\makler\\MaklerCategories.html");
+    private static final Path PATH = Path.of("src","test","resources","com","amihaliov","crawlingservice","parser","makler","MaklerCategories.html");
     private static final IParser PARSER = new MaklerMainParserImpl();
 
     @Test

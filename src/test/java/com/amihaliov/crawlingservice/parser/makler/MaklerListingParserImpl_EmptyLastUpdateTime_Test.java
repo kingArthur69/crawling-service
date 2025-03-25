@@ -17,8 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MaklerListingParserImpl_EmptyLastUpdateTime_Test {
 
-    private static final Path PATH = Path.of(Path.of("").toAbsolutePath().toString(),
-            "src\\test\\resources\\com\\amihaliov\\crawlingservice\\parser\\makler\\MaklerListingEmptyLastUpdateTime.html");
+    private static final Path PATH = Path.of("src","test","resources","com","amihaliov","crawlingservice","parser","makler","MaklerListingEmptyLastUpdateTime.html");
     private static final IParser PARSER = new MaklerListingParserImpl();
 
     @Test
