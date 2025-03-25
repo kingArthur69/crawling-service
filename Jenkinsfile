@@ -16,11 +16,13 @@ pipeline {
                 }
             }
         }
-        stage('SonarQube') {
+        stage('SonarQube scan') {
             steps {
                 sh 'mvn sonar:sonar'
             }
-            steps {
+        }
+        stage('SonarQube scan') {
+             steps {
                 timeout(time: 3, unit: 'MINUTES') {
                 waitForQualityGate abortPipeline: true
                 }
