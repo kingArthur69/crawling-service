@@ -17,8 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MaklerListingParserImpl_CrawledDocument_Test {
 
-    private static final Path PATH = Path.of("src","test","resources","com","amihaliov",
-            "crawlingservice","parser","makler","MaklerListingCrawledDocument.html");
+    private static final Path PATH = Path.of("src","test","resources","com","amihaliov", "crawlingservice","parser","makler","MaklerListingCrawledDocument.html");
     private static final IParser PARSER = new MaklerListingParserImpl();
 
     @Test
