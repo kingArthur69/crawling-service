@@ -94,13 +94,27 @@ public class SavingServiceImpl implements ISavingService {
 
     @Override
     public void save(ParsingResult result) {
+// TODO add here saving by parsingResult type: ListingParsingResult, ArticleParsingResult, CategoryParsingResult
+
         if (result.getArticles() != null) {
             this.save(result.getArticles());
+        }
+
+        if(result.getArticleDetails() != null) {
+            updateArticle(result.getArticleDetails());
         }
 
         if (result.getCategories() != null) {
             categoryRepository.saveAll(result.getCategories());
         }
+    }
+
+    private void updateArticle(ArticleDetails articleDetails) {
+        Optional<Article> article = articleRepository.findById(articleDetails.getArticleId());
+        article.ifPresent(art -> {
+            art.setArticleDetails(articleDetails);
+            articleRepository.save(art);
+        });
     }
 
     @Override

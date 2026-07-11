@@ -25,4 +25,6 @@ public interface ArticleRepository extends MongoRepository<Article, String> {
     List<Article> findByUpdateTimeStampNullAndLastUpdateTimeAfterAndCreateTimeStampAfter(
             LocalDateTime updateTime, LocalDateTime createTime
     );
+
+    Page<Article> findByLastScoredAtBefore(LocalDateTime lastScoredAt, Pageable pageable);
 }
