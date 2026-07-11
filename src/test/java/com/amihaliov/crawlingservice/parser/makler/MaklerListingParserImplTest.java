@@ -12,12 +12,12 @@ import java.nio.file.Path;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MaklerListingParserImplTest {
 
-    private static final Path PATH = Path.of(Path.of("").toAbsolutePath().toString(),
-            "src\\test\\resources\\com\\amihaliov\\crawlingservice\\parser\\makler\\MaklerListing.html");
+    private static final Path PATH = Path.of("src","test","resources","com","amihaliov","crawlingservice","parser","makler","MaklerListing.html");
     private static final IParser PARSER = new MaklerListingParserImpl();
 
     @Test
