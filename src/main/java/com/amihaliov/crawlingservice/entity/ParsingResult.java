@@ -11,5 +11,7 @@ public class ParsingResult {
 
     List<Article> articles;
 
+    ArticleDetails articleDetails;
+
     String nextPageUrl;
 }

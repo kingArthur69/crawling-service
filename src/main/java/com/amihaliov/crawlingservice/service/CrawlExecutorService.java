@@ -1,5 +1,6 @@
 package com.amihaliov.crawlingservice.service;
 
+import com.amihaliov.crawlingservice.entity.Article;
 import com.amihaliov.crawlingservice.entity.Crawl;
 import com.amihaliov.crawlingservice.entity.CrawlStatus;
 import com.amihaliov.crawlingservice.entity.ParsingResult;
@@ -22,6 +23,7 @@ import java.util.concurrent.TimeUnit;
 public class CrawlExecutorService implements ICrawlExecutorService {
 
     private static final ExecutorService EXECUTOR_SERVICE = Executors.newFixedThreadPool(4);
+    private static final ExecutorService DETAIL_EXECUTOR_SERVICE = Executors.newFixedThreadPool(2);
 
     @Value("${pageCrawlDelaySecondsMin}")
     private long PAGE_CRAWL_DELAY_MIN;
@@ -32,7 +34,6 @@ public class CrawlExecutorService implements ICrawlExecutorService {
     private final ICrawlingService crawlingService;
     private final IParsingService parsingService;
     private final ISavingService savingService;
-
 
     public void submitForUpdate(String url) {
         EXECUTOR_SERVICE.execute(() -> processWithPagination(url, 5));
@@ -90,10 +91,37 @@ public class CrawlExecutorService implements ICrawlExecutorService {
 
             savingService.save(result);
 
+            submitForDetails(result);
+
             TimeUnit.SECONDS.sleep(RandomUtils.nextLong(PAGE_CRAWL_DELAY_MIN, PAGE_CRAWL_DELAY_MAX));
 
             return result;
 
+        } catch (Exception e) {
+            throw new RuntimeException("Error processing url " + url, e);
+        }
+    }
+
+    private void submitForDetails(ParsingResult result) {
+        if(result.getArticles() != null) {
+            for (Article article : result.getArticles()) {
+                String url = article.getUrl();
+                if (url != null) {
+                    DETAIL_EXECUTOR_SERVICE.execute(() -> processDetails(url));
+                }
+            }
+        }
+    }
+
+    private void processDetails(String url) {
+        try {
+            Document document = crawlingService.crawl(url);
+
+            ParsingResult result = parsingService.parse(document);
+
+            savingService.save(result);
+
+            TimeUnit.SECONDS.sleep(RandomUtils.nextLong(PAGE_CRAWL_DELAY_MIN, PAGE_CRAWL_DELAY_MAX));
         } catch (Exception e) {
             throw new RuntimeException("Error processing url " + url, e);
         }
